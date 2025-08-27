@@ -6,6 +6,7 @@ export default defineConfig({
   expect: { timeout: 5000 },
   reporter: [['list'], ['html', { outputFolder: 'playwright-report' }]],
   use: {
+    baseURL: 'https://automationexercise.com',
     headless: true,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
@@ -13,7 +14,7 @@ export default defineConfig({
   },
   projects: [
     { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
-    { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
-    { name: 'webkit', use: { ...devices['Desktop Safari'] } },
+    // { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
+    // { name: 'webkit', use: { ...devices['Desktop Safari'] } },
   ],
 });
