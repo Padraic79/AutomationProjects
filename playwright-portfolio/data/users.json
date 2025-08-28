@@ -2,7 +2,9 @@
     "validUser": {
         "username": "Padraic Doyle",
         "email": "padraic.doyle@example.com",
-        "password": "123456"
+        "password": "123456",
+        "message": "Hello, this is a test message.",
+        "subject": "Test Subject"
     },
 
     "invalidUser": {

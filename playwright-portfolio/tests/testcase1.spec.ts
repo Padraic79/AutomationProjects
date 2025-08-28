@@ -9,7 +9,7 @@ import { Signup } from "../PageObjects/SignUp";
 
 test('Register User', async ({ page }) => {
 
-
+    test.setTimeout(120000);
     // 1. Launch browser
     // 2. Navigate to url 'http://automationexercise.com'
     let homepage = new HomePage(page);
@@ -81,5 +81,5 @@ test('Register User', async ({ page }) => {
     await page.getByRole('link', { name: 'Delete Account' }).click()
 
     // 18. Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
-    await expect(page.getByText('ACCOUNT DELETED!')).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'ACCOUNT DELETED!' })).toBeVisible();
 });

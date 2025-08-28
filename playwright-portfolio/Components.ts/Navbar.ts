@@ -14,7 +14,8 @@ export class Navbar {
 
     constructor(page: Page) {
         this.page = page;
-        this.home = this.page.getByRole('link', { name: 'Home' });
+        //this.home = this.page.locator('.nav.navber-nav > a', { name: 'Home' });
+        this.home = page.locator('.nav.navbar-nav a:has-text("Home")');
         this.products = this.page.getByRole('link', { name: 'Products' });
         this.cart = this.page.getByRole('link', { name: 'Cart' });
         this.signupLogin = this.page.getByRole('link', { name: 'Signup / Login' });
