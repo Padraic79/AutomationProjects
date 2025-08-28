@@ -1,4 +1,6 @@
 import { Page, Locator } from "@playwright/test";
+import { acceptCookies } from "../Components.ts/cookieConsent";
+
 
 export class Signup {
 
@@ -66,6 +68,14 @@ export class Signup {
 
     async getTitle() {
         return this.page.title();
+    }
+
+    async newUserSignUp(name: string, email: string) {
+        await this.goto();
+        await acceptCookies(this.page);
+        await this.newUserName(name)
+        await this.newUserEmail(email)
+        await this.clickSignup();
     }
 
 

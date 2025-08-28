@@ -1,5 +1,6 @@
 import { Page, Locator } from "@playwright/test";
 import { HomePage } from "./HomePage";
+import { acceptCookies } from "../Components.ts/cookieConsent";
 
 export class Login extends HomePage {
     readonly page: Page;
@@ -17,6 +18,7 @@ export class Login extends HomePage {
 
     async goto() {
         await this.page.goto(`/login`);
+        await acceptCookies(this.page);
     }
 
     async getTitle() {

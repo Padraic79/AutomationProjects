@@ -16,7 +16,6 @@ test('Login User with correct email and password ', async ({ page }) => {
 
     // 2. Navigate to url 'http://automationexercise.com'
     await login.goto();
-    await login.acceptCookies(); // can use here because Login extends Homepage
 
     // 3. Verify that home page is visible successfully
     expect(await login.getTitle()).toMatch("Automation Exercise");

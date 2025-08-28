@@ -9,7 +9,6 @@ test('Login user with incorrect email and password', async ({ page }) => {
     let login = new Login(page);
     // 2. Navigate to url 'http://automationexercise.com'
     await login.goto();
-    await login.acceptCookies();
 
     // 3. Verify that home page is visible successfully
     expect(await login.getTitle()).toMatch("Automation Exercise");

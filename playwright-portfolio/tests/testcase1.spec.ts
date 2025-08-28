@@ -14,7 +14,7 @@ test('Register User', async ({ page }) => {
     // 2. Navigate to url 'http://automationexercise.com'
     let homepage = new HomePage(page);
     await homepage.goto();
-    await homepage.acceptCookies()
+
 
 
 

@@ -1,5 +1,6 @@
 import { Page, Locator } from '@playwright/test';
 import { Navbar } from '../Components.ts/Navbar';
+import { acceptCookies } from "../Components.ts/cookieConsent";
 
 export class HomePage {
   readonly page: Page;
@@ -13,16 +14,12 @@ export class HomePage {
 
   async goto() {
     await this.page.goto(`/`);
+    await acceptCookies(this.page);
   }
 
   async getTitle() {
     return this.page.title();
   }
 
-  async acceptCookies() {
-    const consentButton = this.page.locator('button:has-text("Consent")');
-    if (await consentButton.isVisible()) {
-      await consentButton.click();
-    }
-  }
+
 }
