@@ -5,10 +5,12 @@ export class ProductsPage {
     readonly page: Page;
     readonly searchInput: Locator;
     readonly searchBtn: Locator;
+    readonly viewProduct: Locator;
 
     constructor(page: Page) {
         this.page = page;
         this.searchInput = page.getByRole('textbox', { name: 'Search Product' });
+        this.viewProduct = page.getByRole('link', { name: 'View Product' });
 
         this.searchBtn = page.locator('#submit_search');
     }
@@ -23,6 +25,7 @@ export class ProductsPage {
     }
 
     async productList() {
+
         const texts = await this.page.locator('.productinfo').allInnerTexts();
         return texts.map(text => text.trim());
     }
