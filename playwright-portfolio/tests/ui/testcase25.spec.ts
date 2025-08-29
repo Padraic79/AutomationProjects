@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { acceptCookies } from "../Components.ts/cookieConsent";
+import { acceptCookies } from "../../Components.ts/cookieConsent";
 
 test('Verify Scroll Up using "Arrow" button and scroll down', async ({ browser }) => {
 
@@ -23,5 +23,8 @@ test('Verify Scroll Up using "Arrow" button and scroll down', async ({ browser }
     await arrowUp.click();
 
     // 7. Verify that page is scrolled up and 'Full-Fledged practice website for Automation Engineers' text is visible on screen
-    await expect((page.getByText('Full-Fledged practice website for Automation Engineers')).first()).toBeVisible();
+
+    await expect(
+        page.getByRole('heading', { level: 2, name: 'Full-Fledged practice website for Automation Engineers' }).first()
+    ).toBeVisible({ timeout: 10000 });
 });

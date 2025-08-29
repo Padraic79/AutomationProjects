@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
-import { HomePage } from "../PageObjects/HomePage";
+import { HomePage } from "../../PageObjects/HomePage";
 
-import { ProductsPage } from "../PageObjects/ProductsPage";
+import { ProductsPage } from "../../PageObjects/ProductsPage";
 
 test('Verify all products and product detail page', async ({ page }) => {
     const homePage = new HomePage(page);
@@ -38,7 +38,7 @@ test('Verify all products and product detail page', async ({ page }) => {
     const condition = await productDetails.locator('p:has-text("Condition:")').innerText();
     const brand = await productDetails.locator('p:has-text("Brand:")').innerText();
 
-    console.log({ name, category, price, availability, condition, brand });
+    // console.log({ name, category, price, availability, condition, brand });
     // 9. Verify that details are visible
     await expect(page.getByRole('heading', { level: 2, name })).toBeVisible();
     await expect(page.getByText(category)).toBeVisible();

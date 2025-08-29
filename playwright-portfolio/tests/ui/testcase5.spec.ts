@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
-import users from '../data/users.json';
-import { Signup } from "../PageObjects/SignUp";
+import users from '../../data/users.json';
+import { Signup } from "../../PageObjects/SignUp";
 
 test('Register user with existing email', async ({ page }) => {
     let signup = new Signup(page);

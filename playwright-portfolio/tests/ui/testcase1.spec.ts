@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { HomePage } from "../PageObjects/HomePage";
-import { Signup } from "../PageObjects/SignUp";
+import { HomePage } from "../../PageObjects/HomePage";
+import { Signup } from "../../PageObjects/SignUp";
 
 
 

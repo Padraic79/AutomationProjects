@@ -1,8 +1,8 @@
 import { test, expect, Page } from "@playwright/test";
-import { HomePage } from "../PageObjects/HomePage";
-import users from "../data/users.json";
-import { Contact } from "../PageObjects/Contact";
-import { Navbar } from "../Components.ts/Navbar";
+import { HomePage } from "../../PageObjects/HomePage";
+import users from "../../data/users.json";
+import { Contact } from "../../PageObjects/Contact";
+import { Navbar } from "../../Components.ts/Navbar";
 
 test('Contact Us Form', async ({ page }) => {
     // 1. Launch browser

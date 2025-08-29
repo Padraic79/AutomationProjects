@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
-import { loginComponent } from "../Components.ts/loginComponent";
-import users from '../data/users.json';
+import { loginComponent } from "../../Components.ts/loginComponent";
+import users from '../../data/users.json';
 
 
 

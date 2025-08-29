@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
-import { Login } from '../PageObjects/Login'
-import users from '../data/users.json';
+import { Login } from '../../PageObjects/Login';
+import users from '../../data/users.json';
 
 //negative test
 test('Login user with incorrect email and password', async ({ page }) => {
