@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { HomePage } from "../PageObjects/HomePage";
+
 import { ProductsPage } from "../PageObjects/ProductsPage";
 
 test('Verify all products and product detail page', async ({ page }) => {
@@ -29,7 +30,7 @@ test('Verify all products and product detail page', async ({ page }) => {
     // Extract details of the product 
 
     const productDetails = page.locator('.product-information');
-    console.log(productDetails);
+    //console.log(productDetails);
     const name = await productDetails.locator('h2').innerText();
     const category = await productDetails.locator('p:has-text("Category:")').innerText();
     const price = await productDetails.locator('span:has-text("Rs.")').first().innerText();
