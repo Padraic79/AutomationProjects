@@ -84,3 +84,27 @@ test("TestCase: API 7: POST To Verify Login with valid details", async ({
 	expect(data.responseCode).toBe(200);
 	expect(data.message).toBe("User exists!");
 });
+
+let ID = "bcd123214123421345222444";
+test("rsa", async ({ request }) => {
+	const response = await request.get(
+		`https://rahulshettyacademy.com/Library/GetBook.php?ID=${ID}`
+	);
+
+	expect(response.status()).toBe(200);
+	console.log(response);
+
+	// let data;
+	// try {
+	// 	const text = await response.text();
+	// 	if (text) {
+	// 		data = JSON.parse(text);
+	// 		console.log("Parsed JSON:", data);
+	// 	} else {
+	// 		console.warn("Response body is empty");
+	// 	}
+	// } catch (e) {
+	// 	console.error("Failed to parse JSON. Raw response:", await response.text());
+	// 	throw e;
+	// }
+});
