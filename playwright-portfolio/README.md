@@ -16,17 +16,29 @@ A modern end-to-end test automation suite for multiple web projects, including t
 
 ```
 playwright-portfolio/
-├── rahulshetty/         # Tests and PageObjects for automationexercise.com
-├── demo-site/           # Tests for custom demo site (hosted in docs/ for GitHub Pages)
-├── personal-site/       # Tests and PageObjects for personal GitHub Pages site
-├── playwright.config.ts # Playwright multi-project configuration
-├── test-results/        # Playwright test output
-├── playwright-report/   # HTML test reports
-├── tsconfig.json        # TypeScript configuration
-└── package.json         # Project dependencies and scripts
+├── rahulshetty/
+│   ├── assets/
+│   ├── Components.ts/
+│   ├── data/
+│   ├── PageObjects/
+│   └── tests/
+│       ├── api/
+│       ├── assets/
+│       └── ui/
+├── personal-site/
+│   ├── PageObjects/
+│   └── tests/
+├── playwright.config.ts
+├── playwright-report/
+├── test-results/
+├── tsconfig.json
+├── package.json
+├── README.md
+
 postman-portfolio/
-├── Library.postman_collection.json # Postman API test collection
-└── README.md            # API testing documentation
+├── BooksData.csv
+├── Library.postman_collection.json
+└── README.md
 ```
 
 - **demo-site** and **personal-site** target web apps hosted on GitHub Pages. The `docs/` folder is used for deployment, as GitHub Pages serves static sites from this directory by default.

@@ -9,7 +9,7 @@ Welcome to my Automation Projects repository! This repo is designed to showcase 
 Multi-project Playwright automation suite, organized for scalability:
 
 - **rahulshetty/**: End-to-end and API tests for the Automation Exercise site, using Page Object Model, data-driven tests, and Playwright best practices.
-- **demo-site/**: Playwright tests for a custom demo web app (see below), designed to showcase advanced UI automation scenarios.
+- **personal-site/**: Playwright tests and PageObjects for a personal demo site hosted on GitHub Pages.
 - **Multi-project config**: Easily run tests for each project with Playwright's multi-project setup.
 
 ### 2. `postman-portfolio/`
@@ -19,7 +19,7 @@ Robust API tests using Postman collections:
 - Chained API requests, dynamic variables, and automated assertions.
 - Example: Library API (add, get, delete book).
 
-### 3. `playwright-demo-site/`
+### 3. Live Demo Site
 
 Live demo site for Playwright UI automation, hosted on GitHub Pages:
 
