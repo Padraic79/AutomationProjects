@@ -4,30 +4,7 @@ Welcome to my Automation Projects repository! This repo is designed to showcase 
 
 ## Projects & Structure
 
-### 1. `playwright-portfolio/`
-
-Multi-project Playwright automation suite, organized for scalability:
-
-- **rahulshetty/**: End-to-end and API tests for the Automation Exercise site, using Page Object Model, data-driven tests, and Playwright best practices.
-- **personal-site/**: Playwright tests and PageObjects for a personal demo site hosted on GitHub Pages.
-- **Multi-project config**: Easily run tests for each project with Playwright's multi-project setup.
-
-### 2. `selenium-portfolio/`
-
-Selenium automation suite for learning and comparison:
-
-- **personal-site/**: Selenium tests and PageObjects for the same demo site as Playwright, using TypeScript and Jest.
-- **Comparison guide**: Includes a detailed document comparing Playwright and Selenium, written for my own learning and to help others understand the differences in setup, drivers, test runners, and best practices.
-- **Purpose**: This folder is dedicated to exploring Selenium, practicing automation concepts, and directly comparing approaches with Playwright.
-
-### 3. `postman-portfolio/`
-
-Robust API tests using Postman collections:
-
-- Chained API requests, dynamic variables, and automated assertions.
-- Example: Library API (add, get, delete book).
-
-### 4. Live Demo Site
+### 1. `docs/` (Live Demo Site)
 
 Live demo site for Playwright UI automation, hosted on GitHub Pages:
 
@@ -35,6 +12,29 @@ Live demo site for Playwright UI automation, hosted on GitHub Pages:
 - Advanced UI elements (dropdowns, tooltips, modals, file upload, dark/light mode, spinners)
 - LocalStorage and SessionStorage scenarios
 - **[🌐 View Live Demo](https://padraic79.github.io/AutomationProjects/)**
+
+### 2. `playwright-portfolio/`
+
+Multi-project Playwright automation suite, organized for scalability:
+
+- **rahulshetty/**: End-to-end and API tests for the Automation Exercise site, using Page Object Model, data-driven tests, and Playwright best practices.
+- **personal-site/**: Playwright tests and PageObjects for a personal demo site hosted on GitHub Pages.
+- **Multi-project config**: Easily run tests for each project with Playwright's multi-project setup.
+
+### 3. `selenium-portfolio/`
+
+Selenium automation suite for learning and comparison:
+
+- **personal-site/**: Selenium tests and PageObjects for the same demo site as Playwright, using TypeScript and Jest.
+- **Comparison guide**: Includes a detailed document comparing Playwright and Selenium, written for my own learning and to help others understand the differences in setup, drivers, test runners, and best practices.
+- **Purpose**: This folder is dedicated to exploring Selenium, practicing automation concepts, and directly comparing approaches with Playwright.
+
+### 4. `postman-portfolio/`
+
+Robust API tests using Postman collections:
+
+- Chained API requests, dynamic variables, and automated assertions.
+- Example: Library API (add, get, delete book).
 
 ## About This Repository
 
