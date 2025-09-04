@@ -1,54 +1,62 @@
 # Automation Projects
 
-Welcome to my Automation Projects repository! This repo showcases my skills in test automation, API testing, and modern development practices using industry-standard tools like Playwright and Postman.
+Welcome to my Automation Projects repository! This repo is designed to showcase my skills in modern test automation, API testing, and framework design using industry-standard tools like Playwright and Postman. It is structured for clarity, scalability, and real-world relevance—ideal for potential employers and collaborators.
 
-## Projects Included
+## Projects & Structure
 
-### 1. playwright-portfolio
+### 1. `playwright-portfolio/`
 
-A comprehensive end-to-end and API automation suite built with Playwright (TypeScript/JavaScript). It demonstrates:
+Multi-project Playwright automation suite, organized for scalability:
 
-- UI automation using the Page Object Model (POM)
-- API testing with Playwright's APIRequestContext
-- Test data management and fixtures
-- Modern TypeScript project structure
-- Automated reporting and best practices
+- **rahulshetty/**: End-to-end and API tests for the Automation Exercise site, using Page Object Model, data-driven tests, and Playwright best practices.
+- **demo-site/**: Playwright tests for a custom demo web app (see below), designed to showcase advanced UI automation scenarios.
+- **Multi-project config**: Easily run tests for each project with Playwright's multi-project setup.
 
-### 2. postman-portfolio
+### 2. `postman-portfolio/`
 
-A collection of robust API tests using Postman. It features:
+Robust API tests using Postman collections:
 
-- Chained API requests for realistic workflows
-- Dynamic variable handling and scripting
-- Automated assertions for status, schema, and business logic
-- Example: Library API (add, get, and delete book)
+- Chained API requests, dynamic variables, and automated assertions.
+- Example: Library API (add, get, delete book).
 
-### 3. playwright-demo-site
+### 3. `playwright-demo-site/`
 
-A live demo site for Playwright automation testing, hosted on GitHub Pages. It features:
+Live demo site for Playwright UI automation, hosted on GitHub Pages:
 
 - Interactive forms (login, registration, contact)
-- Dynamic UI elements for testing (dropdowns, tooltips, modals)
-- LocalStorage and SessionStorage testing scenarios
-- Dark/light mode toggle and loading spinners
+- Advanced UI elements (dropdowns, tooltips, modals, file upload, dark/light mode, spinners)
+- LocalStorage and SessionStorage scenarios
 - **[🌐 View Live Demo](https://padraic79.github.io/AutomationProjects/)**
 
 ## About This Repository
 
-This repository is a work in progress and will be continuously updated with new projects, features, and improvements. My goal is to demonstrate a wide range of automation skills, from UI and API testing to data-driven and maintainable test design.
+This repository is a work in progress and will be continuously updated with new projects, features, and improvements. My goal is to demonstrate:
+
+- Advanced UI and API automation
+- Scalable, maintainable framework design
+- Real-world test scenarios and best practices
+- Clean, well-documented code
 
 ## Why Explore This Repo?
 
-- **Real-World Scenarios:** Each project is based on real-world automation challenges and best practices.
-- **Code Quality:** Emphasis on clean, maintainable, and well-documented code.
+- **Real-World Scenarios:** Projects are based on real-world automation challenges and best practices.
+- **Framework Design:** Demonstrates scalable, modular, and maintainable automation architecture.
 - **Growth Mindset:** I am always learning and adding new tools, frameworks, and techniques.
 
 ## For Employers & Reviewers
 
 If you are a potential employer or collaborator, I invite you to explore the code, structure, and documentation. I am passionate about automation, quality, and continuous improvement. Feedback and suggestions are always welcome!
 
+**Key skills demonstrated:**
+
+- Playwright (TypeScript/JavaScript) UI & API automation
+- Page Object Model & data-driven testing
+- Postman API collections & scripting
+- Multi-project configuration & scalable repo design
+- Modern web automation scenarios (file upload, cookies, storage, accessibility)
+
 ---
 
 Thank you for visiting my Automation Projects repo!
 
-— Padraic79
+— Padraic Doyle
