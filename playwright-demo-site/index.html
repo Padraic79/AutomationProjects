@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Playwright Demo Site</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Playwright Demo Site</h1>
+			<nav>
+				<a href="#">Home</a>
+				<a href="#login">Login</a>
+				<a href="#register">Register</a>
+				<a href="#contact">Contact</a>
+				<a href="#features">Features</a>
+			</nav>
+		</header>
+		<main>
+			<section id="home">
+				<h2>Welcome!</h2>
+				<p>
+					This is a simple demo site for Playwright automation testing. Use the
+					navigation to explore different features.
+				</p>
+			</section>
+			<section id="login">
+				<h2>Login</h2>
+				<form id="loginForm">
+					<label for="login-email">Email:</label>
+					<input type="email" id="login-email" name="email" required />
+					<label for="login-password">Password:</label>
+					<input type="password" id="login-password" name="password" required />
+					<button type="submit">Login</button>
+				</form>
+				<div id="login-message"></div>
+			</section>
+			<section id="register">
+				<h2>Register</h2>
+				<form id="registerForm">
+					<label for="register-name">Name:</label>
+					<input type="text" id="register-name" name="name" required />
+					<label for="register-email">Email:</label>
+					<input type="email" id="register-email" name="email" required />
+					<label for="register-password">Password:</label>
+					<input
+						type="password"
+						id="register-password"
+						name="password"
+						required
+					/>
+					<button type="submit">Register</button>
+				</form>
+				<div id="register-message"></div>
+			</section>
+			<section id="contact">
+				<h2>Contact Us</h2>
+				<form id="contactForm">
+					<label for="contact-name">Name:</label>
+					<input type="text" id="contact-name" name="name" required />
+					<label for="contact-email">Email:</label>
+					<input type="email" id="contact-email" name="email" required />
+					<label for="contact-message">Message:</label>
+					<textarea id="contact-message" name="message" required></textarea>
+					<button type="submit">Send</button>
+				</form>
+				<div id="contact-response"></div>
+			</section>
+			<section id="features">
+				<h2>Advanced Features</h2>
+				<div class="feature-block">
+					<h3>Dropdown Example</h3>
+					<label for="demo-dropdown">Choose a fruit:</label>
+					<select id="demo-dropdown">
+						<option value="">--Select--</option>
+						<option value="apple">Apple</option>
+						<option value="banana">Banana</option>
+						<option value="orange">Orange</option>
+					</select>
+					<span id="dropdown-result"></span>
+				</div>
+				<div class="feature-block">
+					<h3>Cookie Consent</h3>
+					<div id="cookie-banner" class="cookie-banner">
+						<span>This site uses cookies to enhance your experience.</span>
+						<button id="accept-cookies">Accept</button>
+					</div>
+					<div id="cookie-status"></div>
+				</div>
+				<div class="feature-block">
+					<h3>Session Token Simulation</h3>
+					<button id="generate-session">Generate Session Token</button>
+					<span id="session-token"></span>
+					<button id="clear-session">Clear Session</button>
+				</div>
+				<div class="feature-block">
+					<h3>Dynamic Table</h3>
+					<button id="add-row">Add Row</button>
+					<table id="demo-table" border="1" style="margin-top: 10px">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Sample</td>
+								<td>123</td>
+								<td><button class="delete-row">Delete</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="feature-block">
+					<h3>Modal Dialog</h3>
+					<button id="open-modal">Open Modal</button>
+					<div
+						id="modal"
+						class="modal"
+						aria-modal="true"
+						role="dialog"
+						tabindex="-1"
+					>
+						<div class="modal-content">
+							<span id="close-modal" class="close">&times;</span>
+							<h4>Modal Title</h4>
+							<p>This is a modal dialog. Test open/close and focus trap.</p>
+						</div>
+					</div>
+				</div>
+				<div class="feature-block">
+					<h3>File Upload & Preview</h3>
+					<input type="file" id="file-upload" accept="image/*" />
+					<div id="file-preview"></div>
+				</div>
+				<div class="feature-block">
+					<h3>Tooltip Example</h3>
+					<button id="tooltip-btn" aria-describedby="tooltip">Hover me</button>
+					<span id="tooltip" class="tooltip" role="tooltip"
+						>This is a tooltip for Playwright tests!</span
+					>
+				</div>
+				<div class="feature-block">
+					<h3>Dark/Light Mode Toggle</h3>
+					<label class="switch">
+						<input type="checkbox" id="theme-toggle" />
+						<span class="slider"></span>
+					</label>
+					<span id="theme-label">Light Mode</span>
+				</div>
+				<div class="feature-block">
+					<h3>Delayed Loading Spinner</h3>
+					<button id="show-spinner">Load Data</button>
+					<div id="spinner" class="spinner" style="display: none"></div>
+					<div id="spinner-result"></div>
+				</div>
+				<div class="feature-block">
+					<h3>LocalStorage Key-Value Editor</h3>
+					<input type="text" id="ls-key" placeholder="Key" />
+					<input type="text" id="ls-value" placeholder="Value" />
+					<button id="ls-set">Set</button>
+					<button id="ls-get">Get</button>
+					<button id="ls-remove">Remove</button>
+					<div id="ls-result"></div>
+				</div>
+				<div class="feature-block">
+					<h3>Toast Notification</h3>
+					<button id="show-toast">Show Toast</button>
+					<div id="toast" class="toast" role="status" aria-live="polite"></div>
+				</div>
+				<div class="feature-block">
+					<h3>ARIA Live Region</h3>
+					<button id="announce-btn">Announce Message</button>
+					<div id="aria-live" class="aria-live" aria-live="polite"></div>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<p>&copy; 2025 Playwright Demo Site by Padraic79</p>
+		</footer>
+		<script src="script.js"></script>
+	</body>
+</html>

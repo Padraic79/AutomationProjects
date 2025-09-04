@@ -1,0 +1,65 @@
+# Modal dialog
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100vw; height: 100vh; overflow: auto; background: rgba(0,0,0,0.3); }
+.modal-content { background: #fff; margin: 10% auto; padding: 2rem; border-radius: 8px; width: 90%; max-width: 400px; position: relative; box-shadow: 0 2px 16px rgba(0,0,0,0.2); }
+.close { position: absolute; top: 10px; right: 18px; font-size: 2rem; color: #888; cursor: pointer; }
+.close:hover { color: #222; }
+
+#file-preview img { margin-top: 0.7rem; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+
+.tooltip { visibility: hidden; background: #222; color: #fff; text-align: center; border-radius: 4px; padding: 0.4rem 0.8rem; position: absolute; z-index: 10; margin-left: 1rem; font-size: 0.95rem; }
+#tooltip-btn:hover + #tooltip { visibility: visible; }
+
+body.dark { background: #181a1b; color: #e0e0e0; }
+body.dark main, body.dark .feature-block { background: #23272b !important; color: #e0e0e0; }
+body.dark header, body.dark footer { background: #111; color: #fff; }
+body.dark input, body.dark textarea, body.dark select { background: #23272b; color: #e0e0e0; border-color: #444; }
+body.dark .modal-content { background: #23272b; color: #e0e0e0; }
+
+/* Toggle switch */
+.switch { position: relative; display: inline-block; width: 50px; height: 24px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background: #ccc; transition: .4s; border-radius: 24px; }
+.slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background: white; transition: .4s; border-radius: 50%; }
+input:checked + .slider { background: #007700; }
+input:checked + .slider:before { transform: translateX(26px); }
+
+/* Spinner */
+.spinner { border: 4px solid #f3f3f3; border-top: 4px solid #007700; border-radius: 50%; width: 32px; height: 32px; animation: spin 1s linear infinite; display: inline-block; vertical-align: middle; margin-left: 1rem; }
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* Toast notification */
+.toast { visibility: hidden; min-width: 180px; background: #222; color: #fff; text-align: center; border-radius: 4px; padding: 0.7rem 1.2rem; position: fixed; z-index: 2000; left: 50%; bottom: 40px; transform: translateX(-50%); font-size: 1rem; opacity: 0; transition: opacity 0.3s, visibility 0.3s; }
+.toast.show { visibility: visible; opacity: 1; }
+
+/* ARIA live region */
+.aria-live { min-height: 1.2em; font-weight: bold; color: #0055aa; margin-top: 0.5rem; }
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f7f7; }
+header { background: #222; color: #fff; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+header h1 { margin: 0; font-size: 2rem; }
+nav a { color: #fff; margin-left: 1.5rem; text-decoration: none; font-weight: bold; }
+nav a:hover { text-decoration: underline; }
+main { max-width: 700px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+section { margin-bottom: 2.5rem; }
+form { display: flex; flex-direction: column; gap: 0.7rem; }
+input, textarea, button { padding: 0.5rem; font-size: 1rem; border-radius: 4px; border: 1px solid #ccc; }
+button { background: #222; color: #fff; border: none; cursor: pointer; transition: background 0.2s; }
+button:hover { background: #444; }
+#login-message, #register-message, #contact-response { margin-top: 0.5rem; color: #007700; font-weight: bold; min-height: 1.2em; }
+
+.feature-block { margin-bottom: 2rem; padding: 1rem; background: #f0f4fa; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+.feature-block h3 { margin-top: 0; }
+#demo-dropdown { margin-left: 0.5rem; }
+#dropdown-result { margin-left: 1rem; font-weight: bold; color: #333; }
+.cookie-banner { background: #222; color: #fff; padding: 0.7rem 1.2rem; border-radius: 5px; display: inline-block; margin-bottom: 0.5rem; }
+#accept-cookies { margin-left: 1rem; background: #007700; color: #fff; border: none; padding: 0.4rem 1rem; border-radius: 4px; cursor: pointer; }
+#accept-cookies:hover { background: #009900; }
+#cookie-status { margin-left: 1rem; color: #007700; font-weight: bold; }
+#session-token { margin-left: 1rem; font-weight: bold; color: #0055aa; }
+#clear-session { margin-left: 1rem; background: #bb0000; color: #fff; border: none; padding: 0.4rem 1rem; border-radius: 4px; cursor: pointer; }
+#clear-session:hover { background: #e60000; }
+#demo-table { width: 100%; border-collapse: collapse; }
+#demo-table th, #demo-table td { padding: 0.5rem 1rem; text-align: left; }
+#demo-table th { background: #e0e7ef; }
+.delete-row { background: #bb0000; color: #fff; border: none; padding: 0.3rem 0.8rem; border-radius: 4px; cursor: pointer; }
+.delete-row:hover { background: #e60000; }
+footer { text-align: center; padding: 1rem; background: #222; color: #fff; margin-top: 2rem; border-radius: 0 0 8px 8px; }
