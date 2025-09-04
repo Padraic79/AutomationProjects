@@ -23,6 +23,16 @@ A collection of robust API tests using Postman. It features:
 - Automated assertions for status, schema, and business logic
 - Example: Library API (add, get, and delete book)
 
+### 3. playwright-demo-site
+
+A live demo site for Playwright automation testing, hosted on GitHub Pages. It features:
+
+- Interactive forms (login, registration, contact)
+- Dynamic UI elements for testing (dropdowns, tooltips, modals)
+- LocalStorage and SessionStorage testing scenarios
+- Dark/light mode toggle and loading spinners
+- **[🌐 View Live Demo](https://padraic79.github.io/AutomationProjects/)**
+
 ## About This Repository
 
 This repository is a work in progress and will be continuously updated with new projects, features, and improvements. My goal is to demonstrate a wide range of automation skills, from UI and API testing to data-driven and maintainable test design.

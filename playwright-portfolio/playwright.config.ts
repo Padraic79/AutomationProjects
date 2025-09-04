@@ -21,7 +21,7 @@ export default defineConfig({
       name: 'demo-site',
       testDir: 'demo-site',
       use: {
-        baseURL: 'http://localhost:3000', // Change to your local or GitHub Pages URL
+        baseURL: 'https://padraic79.github.io/AutomationProjects/', // GitHub Pages URL for demo site
         headless: true,
         screenshot: 'only-on-failure',
         video: 'retain-on-failure',
