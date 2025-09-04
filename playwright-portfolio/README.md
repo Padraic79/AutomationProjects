@@ -1,6 +1,6 @@
 # Playwright-Portfolio
 
-A modern end-to-end test automation suite for multiple web projects, including the [Automation Exercise](https://automationexercise.com/) demo site and custom demo sites hosted on GitHub Pages. Built with Playwright and the Page Object Model (POM) in TypeScript.
+A modern end-to-end test automation suite for multiple web projects, including the [Automation Exercise](https://automationexercise.com/) demo site and a [personal demo site](https://padraic79.github.io/AutomationProjects/) hosted on GitHub Pages. Built with Playwright and the Page Object Model (POM) in TypeScript.
 
 ## Features
 
@@ -41,7 +41,7 @@ postman-portfolio/
 └── README.md
 ```
 
-- **demo-site** and **personal-site** target web apps hosted on GitHub Pages. The `docs/` folder is used for deployment, as GitHub Pages serves static sites from this directory by default.
+- **personal-site** contains Playwright tests for your demo site hosted on GitHub Pages. Deployment is managed at the repository root, not via a docs/ folder.
 - The Playwright config uses a multi-project setup, allowing you to run tests for each site independently or all together.
 - The postman-portfolio folder contains API test collections and documentation for testing REST APIs using Postman.
 
@@ -81,7 +81,6 @@ npx playwright test
 ```sh
 npx playwright test --project=personal-site
 npx playwright test --project=rahulshetty
-npx playwright test --project=demo-site
 ```
 
 ### Run tests in headed mode
