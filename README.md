@@ -1,6 +1,6 @@
 # Automation Projects
 
-Welcome to my Automation Projects repository! This repo is designed to showcase my skills in modern test automation, API testing, and framework design using industry-standard tools like Playwright and Postman. It is structured for clarity, scalability, and real-world relevance—ideal for potential employers and collaborators.
+Welcome to my Automation Projects repository! This repo is designed to showcase my skills in modern test automation, API testing, and framework design using industry-standard tools like Playwright and Postman. It is structured for clarity, scalability, and real-world relevance.
 
 ## Projects & Structure
 
