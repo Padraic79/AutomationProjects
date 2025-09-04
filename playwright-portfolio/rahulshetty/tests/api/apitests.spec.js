@@ -92,7 +92,7 @@ test("rsa", async ({ request }) => {
 	);
 
 	expect(response.status()).toBe(200);
-	console.log(response);
+	//console.log(response);
 
 	// let data;
 	// try {

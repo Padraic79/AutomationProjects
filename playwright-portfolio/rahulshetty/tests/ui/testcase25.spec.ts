@@ -1,13 +1,13 @@
 import { test, expect } from "@playwright/test";
 import { acceptCookies } from "../../Components.ts/cookieConsent";
 
-test('Verify Scroll Up using "Arrow" button and scroll down', async ({ browser }) => {
+test('Verify Scroll Up using "Arrow" button and scroll down', async ({ page }) => {
 
     // 1. Launch browser
-    const page = await browser.newPage();
+    // const page = await browser.newPage();
 
     // 2. Navigate to url 'http://automationexercise.com'
-    await page.goto('http://automationexercise.com');
+    await page.goto('https://automationexercise.com');
     acceptCookies(page);
     // 3. Verify that home page is visible successfully
     await expect(page).toHaveTitle(/Automation Exercise/);

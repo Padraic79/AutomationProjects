@@ -1,6 +1,7 @@
 import { Locator, Page } from "@playwright/test";
 import { acceptCookies } from "../Components.ts/cookieConsent";
 import { Navbar } from "../Components.ts/Navbar";
+import path from "path";
 
 export class Contact {
     readonly page: Page;
@@ -37,8 +38,10 @@ export class Contact {
         await this.messageInput.fill(message);
         //await this.subscribe.fill(subscribe);
     }
-    async uploadFile(filePath: string) {
-        await this.fileInput.setInputFiles(filePath);
+
+    async uploadFile(fileName: string) {
+
+        await this.fileInput.setInputFiles(fileName);
     }
 
     async submitForm() {

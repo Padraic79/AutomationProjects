@@ -18,6 +18,7 @@ test('Register User', async ({ page }) => {
 
 
 
+
     // 3. Verify that home page is visible successfully
     //choose title, make sure something unique to homepage
     await expect(await homepage.getTitle()).toMatch(/Automation Exercise/);

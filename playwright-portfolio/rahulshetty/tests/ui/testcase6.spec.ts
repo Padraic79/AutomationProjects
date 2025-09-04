@@ -29,7 +29,7 @@ test('Contact Us Form', async ({ page }) => {
     );
 
     // 7. Upload file
-    await contactPage.uploadFile("assets/sample.txt");
+    await contactPage.uploadFile("rahulshetty/tests/assets/sample.txt");
     page.on('dialog', dialog => dialog.accept());
 
     // 8. Click 'Submit' button
