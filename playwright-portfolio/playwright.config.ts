@@ -29,5 +29,17 @@ export default defineConfig({
         ...devices['Desktop Chrome'],
       },
     },
+    {
+      name: 'personal-site',
+      testDir: 'personal-site/tests',
+      use: {
+        baseURL: 'https://padraic79.github.io/AutomationProjects/',
+        headless: true,
+        screenshot: 'only-on-failure',
+        video: 'retain-on-failure',
+        trace: 'retain-on-failure',
+        ...devices['Desktop Chrome'],
+      },
+    },
   ],
 });
