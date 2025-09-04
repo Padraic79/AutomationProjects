@@ -10,6 +10,7 @@ A modern end-to-end test automation suite for multiple web projects, including t
 - Test data management via fixtures
 - TypeScript for type safety
 - Playwright test runner and reporting
+- API testing using Postman collections (see postman-portfolio)
 
 ## Project Structure
 
@@ -23,10 +24,25 @@ playwright-portfolio/
 ├── playwright-report/   # HTML test reports
 ├── tsconfig.json        # TypeScript configuration
 └── package.json         # Project dependencies and scripts
+postman-portfolio/
+├── Library.postman_collection.json # Postman API test collection
+└── README.md            # API testing documentation
 ```
 
 - **demo-site** and **personal-site** target web apps hosted on GitHub Pages. The `docs/` folder is used for deployment, as GitHub Pages serves static sites from this directory by default.
 - The Playwright config uses a multi-project setup, allowing you to run tests for each site independently or all together.
+- The postman-portfolio folder contains API test collections and documentation for testing REST APIs using Postman.
+
+## API Testing with Postman
+
+API tests are managed in the `postman-portfolio` folder. The included Postman collection demonstrates:
+
+- Adding, retrieving, and deleting books via the Library API
+- Chaining requests using dynamic variables
+- Assertions and scripts for robust, repeatable API testing
+- Full workflow execution using the Postman Collection Runner
+
+See the [postman-portfolio/README.md](../postman-portfolio/README.md) for details and instructions.
 
 ## Getting Started
 
@@ -34,6 +50,7 @@ playwright-portfolio/
 
 - Node.js (v16+ recommended)
 - npm or yarn
+- Postman (for API testing)
 
 ### Install dependencies
 
