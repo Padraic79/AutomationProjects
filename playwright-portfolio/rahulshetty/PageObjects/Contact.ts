@@ -1,7 +1,6 @@
 import { Locator, Page } from "@playwright/test";
 import { acceptCookies } from "../Components.ts/cookieConsent";
 import { Navbar } from "../Components.ts/Navbar";
-import path from "path";
 
 export class Contact {
     readonly page: Page;
