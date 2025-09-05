@@ -1,3 +1,138 @@
+// --- Welcome message logic ---
+const welcomeUser = document.getElementById("welcome-user"); // Add <span id="welcome-user"></span> in your header/nav
+function showWelcome(name) {
+	if (welcomeUser) {
+		welcomeUser.textContent = `Welcome, ${name}!`;
+		welcomeUser.style.display = "inline";
+	}
+}
+function hideWelcome() {
+	if (welcomeUser) {
+		welcomeUser.textContent = "";
+		welcomeUser.style.display = "none";
+	}
+}
+function checkLoginStatus() {
+	const token = localStorage.getItem("authToken");
+	const name = localStorage.getItem("userName");
+	const logoutBtn = document.getElementById("logout-btn");
+	if (token && name) {
+		showWelcome(name);
+		if (logoutBtn) logoutBtn.style.display = "inline-block";
+	} else {
+		hideWelcome();
+		if (logoutBtn) logoutBtn.style.display = "none";
+	}
+}
+window.addEventListener("DOMContentLoaded", checkLoginStatus);
+
+// Backend API base URL (adjust if backend runs elsewhere)
+//const API_BASE = "http://localhost:4000/api";
+const API_BASE = "https://demo-site-backend-byds.onrender.com";
+
+// Unified Login logic
+const loginForm = document.getElementById("loginForm");
+if (loginForm) {
+	loginForm.addEventListener("submit", async (e) => {
+		e.preventDefault();
+		const email = document.getElementById("login-email").value;
+		const password = document.getElementById("login-password").value;
+		const msg = document.getElementById("login-message");
+		msg.textContent = "Logging in...";
+		try {
+			const res = await fetch(`${API_BASE}/login`, {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ email, password }),
+			});
+			const data = await res.json();
+			if (res.ok) {
+				msg.style.color = "green";
+				msg.textContent = data.message || "Login successful!";
+				if (data.token) {
+					localStorage.setItem("authToken", data.token);
+				}
+				if (data.name) {
+					localStorage.setItem("userName", data.name);
+					showWelcome(data.name);
+				}
+				// Show logout button
+				const logoutBtn = document.getElementById("logout-btn");
+				if (logoutBtn) logoutBtn.style.display = "inline-block";
+			} else {
+				msg.style.color = "red";
+				msg.textContent = data.error || "Login failed.";
+				localStorage.removeItem("authToken");
+				localStorage.removeItem("userName");
+				hideWelcome();
+				const logoutBtn = document.getElementById("logout-btn");
+				if (logoutBtn) logoutBtn.style.display = "none";
+			}
+		} catch (err) {
+			msg.style.color = "red";
+			msg.textContent = "Network error.";
+			localStorage.removeItem("authToken");
+			localStorage.removeItem("userName");
+			hideWelcome();
+			const logoutBtn = document.getElementById("logout-btn");
+			if (logoutBtn) logoutBtn.style.display = "none";
+		}
+	});
+}
+
+// Unified Register logic
+const registerForm = document.getElementById("registerForm");
+if (registerForm) {
+	registerForm.addEventListener("submit", async (e) => {
+		e.preventDefault();
+		const name = document.getElementById("register-name").value;
+		const email = document.getElementById("register-email").value;
+		const password = document.getElementById("register-password").value;
+		const msg = document.getElementById("register-message");
+		msg.textContent = "Registering...";
+		try {
+			const res = await fetch(`${API_BASE}/register`, {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ name, email, password }),
+			});
+			const data = await res.json();
+			if (res.ok) {
+				msg.style.color = "green";
+				msg.textContent =
+					data.message || "Registration successful! You can now log in.";
+				registerForm.reset();
+				setTimeout(() => {
+					msg.textContent = "";
+				}, 3000);
+			} else {
+				msg.style.color = "red";
+				msg.textContent = data.error || "Registration failed.";
+			}
+		} catch (err) {
+			msg.style.color = "red";
+			msg.textContent = "Network error.";
+		}
+	});
+}
+
+// Unified Logout logic
+const logoutBtn = document.getElementById("logout-btn");
+if (logoutBtn) {
+	logoutBtn.addEventListener("click", () => {
+		localStorage.removeItem("authToken");
+		localStorage.removeItem("userName");
+		document.getElementById("login-message").textContent = "Logged out.";
+		document.getElementById("login-message").style.color = "#007700";
+		logoutBtn.style.display = "none";
+		hideWelcome();
+	});
+	// Show logout if already logged in
+	if (localStorage.getItem("authToken")) {
+		logoutBtn.style.display = "inline-block";
+	}
+}
+
 // Ensure modal closes on navigation (fix for features page nav)
 document.querySelectorAll("nav a").forEach((link) => {
 	link.addEventListener("click", () => {
@@ -5,6 +140,7 @@ document.querySelectorAll("nav a").forEach((link) => {
 		if (modal) modal.style.display = "none";
 	});
 });
+
 // Modal dialog
 const openModal = document.getElementById("open-modal");
 const modal = document.getElementById("modal");
@@ -20,7 +156,7 @@ if (openModal && modal && closeModal) {
 	window.addEventListener("click", (e) => {
 		if (e.target === modal) modal.style.display = "none";
 	});
-// End of file
+}
 
 // File upload & preview
 const fileUpload = document.getElementById("file-upload");
@@ -91,60 +227,22 @@ const lsGet = document.getElementById("ls-get");
 const lsRemove = document.getElementById("ls-remove");
 const lsResult = document.getElementById("ls-result");
 if (lsKey && lsValue && lsSet && lsGet && lsRemove && lsResult) {
-	lsSet.addEventListener("click", () => {
-		if (loginForm) {
-			loginForm.addEventListener("submit", async (e) => {
-				e.preventDefault();
-				const email = document.getElementById("login-email").value;
-				const password = document.getElementById("login-password").value;
-				const msg = document.getElementById("login-message");
-				msg.textContent = "Logging in...";
-				try {
-					const res = await fetch(`${API_BASE}/login`, {
-						method: "POST",
-						headers: { "Content-Type": "application/json" },
-						body: JSON.stringify({ email, password })
-					});
-					const data = await res.json();
-					if (res.ok) {
-						msg.style.color = "green";
-						msg.textContent = data.message || "Login successful!";
-						if (data.token) {
-							localStorage.setItem("authToken", data.token);
-						}
-						document.getElementById("logout-btn").style.display = "inline-block";
-					} else {
-						msg.style.color = "red";
-						msg.textContent = data.error || "Login failed.";
-						localStorage.removeItem("authToken");
-						document.getElementById("logout-btn").style.display = "none";
-					}
-				} catch (err) {
-					msg.style.color = "red";
-					msg.textContent = "Network error.";
-					localStorage.removeItem("authToken");
-					document.getElementById("logout-btn").style.display = "none";
-				}
-			});
-		}
+	if (lsKey && lsValue && lsSet && lsGet && lsRemove && lsResult) {
+		lsSet.addEventListener("click", () => {
+			localStorage.setItem(lsKey.value, lsValue.value);
+			lsResult.textContent = `Set ${lsKey.value}`;
+		});
+		lsGet.addEventListener("click", () => {
+			const val = localStorage.getItem(lsKey.value);
+			lsResult.textContent = val !== null ? `Value: ${val}` : "Not found.";
+		});
+		lsRemove.addEventListener("click", () => {
+			localStorage.removeItem(lsKey.value);
+			lsResult.textContent = `Removed ${lsKey.value}`;
+		});
+	}
+}
 
-		// Logout button logic
-		const logoutBtn = document.getElementById("logout-btn");
-		if (logoutBtn) {
-			logoutBtn.addEventListener("click", () => {
-				localStorage.removeItem("authToken");
-				document.getElementById("login-message").textContent = "Logged out.";
-				document.getElementById("login-message").style.color = "#007700";
-				logoutBtn.style.display = "none";
-			});
-			// Show logout if already logged in
-			if (localStorage.getItem("authToken")) {
-				logoutBtn.style.display = "inline-block";
-			}
-		}
-
-// ARIA live region
-const announceBtn = document.getElementById("announce-btn");
 const ariaLive = document.getElementById("aria-live");
 if (announceBtn && ariaLive) {
 	announceBtn.addEventListener("click", () => {
@@ -155,71 +253,7 @@ if (announceBtn && ariaLive) {
 	});
 }
 
-// Login form
-const loginForm = document.getElementById("loginForm");
-// Backend API base URL (adjust if backend runs elsewhere)
-//const API_BASE = "http://localhost:4000/api";
-const API_BASE = "https://demo-site-backend-byds.onrender.com";
-if (loginForm) {
-	loginForm.addEventListener("submit", async (e) => {
-		e.preventDefault();
-		const email = document.getElementById("login-email").value;
-		const password = document.getElementById("login-password").value;
-		const msg = document.getElementById("login-message");
-		msg.textContent = "Logging in...";
-		try {
-			const res = await fetch(`${API_BASE}/login`, {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ email, password })
-			});
-			const data = await res.json();
-			if (res.ok) {
-				msg.style.color = "green";
-				msg.textContent = data.message || "Login successful!";
-				// Optionally redirect or store token here
-			} else {
-				msg.style.color = "red";
-				msg.textContent = data.error || "Login failed.";
-			}
-		} catch (err) {
-			msg.style.color = "red";
-			msg.textContent = "Network error.";
-		}
-	});
-}
-
-// Register form
-const registerForm = document.getElementById("registerForm");
-if (registerForm) {
-	registerForm.addEventListener("submit", async (e) => {
-		e.preventDefault();
-		const name = document.getElementById("register-name").value;
-		const email = document.getElementById("register-email").value;
-		const password = document.getElementById("register-password").value;
-		const msg = document.getElementById("register-message");
-		msg.textContent = "Registering...";
-		try {
-			const res = await fetch(`${API_BASE}/register`, {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ name, email, password })
-			});
-			const data = await res.json();
-			if (res.ok) {
-				msg.style.color = "green";
-				msg.textContent = data.message || "Registration successful!";
-				// Optionally redirect or clear form here
-			} else {
-				msg.style.color = "red";
-				msg.textContent = data.error || "Registration failed.";
-			}
-		} catch (err) {
-			msg.style.color = "red";
-			msg.textContent = "Network error.";
-		}
-	});
-}
+// ...existing code...
 
 // Contact form
 const contactForm = document.getElementById("contactForm");
