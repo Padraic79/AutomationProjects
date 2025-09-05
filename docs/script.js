@@ -24,7 +24,7 @@ function checkLoginStatus() {
 		if (logoutBtn) logoutBtn.style.display = "none";
 	}
 }
-window.addEventListener("DOMContentLoaded", checkLoginStatus);
+window.onload = checkLoginStatus;
 
 // Backend API base URL (adjust if backend runs elsewhere)
 //const API_BASE = "http://localhost:4000/api";
