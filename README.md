@@ -81,7 +81,7 @@ A showcase of modern test automation, UI and API testing, and framework design u
   ```
 - See `playwright-portfolio/playwright.config.ts` for the baseURL (set to the live site).
 
-## Key Features
+## Features
 
 - Modern UI and API automation (Playwright, Selenium, Postman)
 - Scalable, maintainable framework design
