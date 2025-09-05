@@ -69,14 +69,44 @@ If you are a potential employer or collaborator, I invite you to explore the cod
    ```
 2. Open the live demo site in your browser. The frontend will connect to your local backend for authentication.
 
-## 🧑‍💻 For Employers & Reviewers
+---
 
-- Demonstrates:
-  - Modern UI and API automation (Playwright, Selenium, Postman)
-  - Scalable, maintainable framework design
-  - Real-world test scenarios and best practices
-  - Clean, well-documented code
-- Feedback and suggestions are welcome!
+## � Portfolio Demo & Employer Guide
+
+**Live Demo:**
+
+- Frontend: [https://padraic79.github.io/AutomationProjects/](https://padraic79.github.io/AutomationProjects/)
+- Backend API: [https://demo-site-backend-byds.onrender.com](https://demo-site-backend-byds.onrender.com)
+
+**Try it out:**
+
+- Register and log in with a real account (demo backend, safe for test data)
+- Explore the UI/UX, protected routes, and logout features
+
+**Automated UI Tests:**
+
+- Playwright tests target the live GitHub Pages site by default
+- To run tests:
+  ```
+  cd playwright-portfolio
+  npm install
+  npx playwright test
+  ```
+- See `playwright-portfolio/playwright.config.ts` for the baseURL (set to the live site)
+
+**For Local Development:**
+
+- You can run the backend locally (Node.js/Express/SQLite)
+- Update `API_BASE` in `docs/script.js` to `http://localhost:4000` if needed
+- Serve the frontend with a local web server (e.g. `npx serve docs`)
+
+**For Employers:**
+
+- This repo demonstrates a real-world, production-ready CI/CD pipeline
+- All tests and features work against the live deployed site
+- See Playwright PageObjects and test structure in `playwright-portfolio/tests/`
+
+---
 
 ---
 
