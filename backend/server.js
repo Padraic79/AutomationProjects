@@ -6,7 +6,7 @@ import bodyParser from "body-parser";
 import jwt from "jsonwebtoken";
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const JWT_SECRET = process.env.JWT_SECRET || "playwright-demo-secret";
 
 app.use(cors());
@@ -95,6 +95,6 @@ app.get("/api/profile", authenticateToken, async (req, res) => {
 	});
 });
 
-app.listen(PORT, () => {
-	console.log(`Backend server running on http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+	console.log(`Backend server running on http://0.0.0.0:${PORT}`);
 });
