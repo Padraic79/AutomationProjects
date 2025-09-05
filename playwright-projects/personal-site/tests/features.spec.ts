@@ -33,10 +33,11 @@ test.describe("Features Page", () => {
 
     test("Dynamic Table - Add and Delete Row", async () => {
         const initialRows = await features.demoTable.locator("tbody tr").count();
+        // Register both dialog handlers BEFORE clicking the button
+        const nameDialogPromise = features.page.waitForEvent('dialog').then(dialog => dialog.accept('TestName'));
+        const valueDialogPromise = features.page.waitForEvent('dialog').then(dialog => dialog.accept('TestValue'));
         await features.addRowBtn.click();
-        // Simulate prompt dialogs
-        await features.page.once('dialog', dialog => dialog.accept('TestName'));
-        await features.page.once('dialog', dialog => dialog.accept('TestValue'));
+        await Promise.all([nameDialogPromise, valueDialogPromise]);
         // Wait for row to be added
         await expect(features.demoTable.locator("tbody tr")).toHaveCount(initialRows + 1);
         // Delete the new row
@@ -63,9 +64,10 @@ test.describe("Features Page", () => {
     });
 
     test("Dark/Light Mode Toggle", async () => {
-        await features.darkModeToggle.check();
+        // Click the visible slider instead of the hidden checkbox
+        await features.page.locator('.switch .slider').click();
         await expect(features.themeLabel).toHaveText(/dark/i);
-        await features.darkModeToggle.uncheck();
+        await features.page.locator('.switch .slider').click();
         await expect(features.themeLabel).toHaveText(/light/i);
     });
 
