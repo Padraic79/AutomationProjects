@@ -30,21 +30,17 @@ function checkLoginStatus() {
 		if (nameOrEmail) localStorage.setItem("userName", nameOrEmail);
 	}
 	const logoutBtn = document.getElementById("logout-btn");
-	console.log(
-		"[checkLoginStatus] token:",
-		token,
-		"name:",
-		name,
-		"logoutBtn:",
-		!!logoutBtn
-	);
+	const loginLink = document.querySelector('nav a[href="login.html"]');
 	if (token && nameOrEmail) {
 		showWelcome(nameOrEmail);
 		if (logoutBtn)
 			logoutBtn.style.setProperty("display", "inline-block", "important");
+		if (loginLink) loginLink.style.setProperty("display", "none", "important");
 	} else {
 		hideWelcome();
 		if (logoutBtn) logoutBtn.style.setProperty("display", "none", "important");
+		if (loginLink)
+			loginLink.style.setProperty("display", "inline-block", "important");
 	}
 }
 document.addEventListener("DOMContentLoaded", checkLoginStatus);
