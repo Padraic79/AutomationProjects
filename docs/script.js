@@ -284,8 +284,6 @@ if (announceBtn && ariaLive) {
 	});
 }
 
-// ...existing code...
-
 // Contact form
 const contactForm = document.getElementById("contactForm");
 if (contactForm) {
@@ -377,5 +375,19 @@ if (addRowBtn && demoTable) {
 		if (e.target.classList.contains("delete-row")) {
 			e.target.closest("tr").remove();
 		}
+	});
+}
+
+// Toast notification feature
+const showToast = document.getElementById("show-toast");
+const toast = document.getElementById("toast");
+if (showToast && toast) {
+	showToast.addEventListener("click", () => {
+		toast.classList.add("show");
+		toast.textContent = "This is a toast notification!";
+		setTimeout(() => {
+			toast.classList.remove("show");
+			toast.textContent = "";
+		}, 2000);
 	});
 }

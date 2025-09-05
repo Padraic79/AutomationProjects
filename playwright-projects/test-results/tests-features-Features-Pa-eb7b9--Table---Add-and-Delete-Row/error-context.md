@@ -1,0 +1,90 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#features-main"
+  - banner [ref=e3]:
+    - heading "Playwright Demo Site" [level=1] [ref=e4]
+    - navigation "Main navigation" [ref=e5]:
+      - link "Home" [ref=e6] [cursor=pointer]:
+        - /url: home.html
+      - link "Login" [ref=e7] [cursor=pointer]:
+        - /url: login.html
+      - link "Register" [ref=e8] [cursor=pointer]:
+        - /url: register.html
+      - link "Contact" [ref=e9] [cursor=pointer]:
+        - /url: contact.html
+      - link "Features" [ref=e10] [cursor=pointer]:
+        - /url: features.html
+  - main [ref=e11]:
+    - generic [ref=e12]:
+      - heading "Advanced Features" [level=2] [ref=e13]
+      - generic [ref=e14]:
+        - heading "Dropdown Example" [level=3] [ref=e15]
+        - generic [ref=e16]: "Choose a fruit:"
+        - combobox "Choose a fruit:" [ref=e17]:
+          - option "--Select--" [selected]
+          - option "Apple"
+          - option "Banana"
+          - option "Orange"
+      - generic [ref=e18]:
+        - heading "Cookie Consent" [level=3] [ref=e19]
+        - generic [ref=e20]:
+          - generic [ref=e21]: This site uses cookies to enhance your experience.
+          - button "Accept" [ref=e22] [cursor=pointer]
+      - generic [ref=e23]:
+        - heading "Session Token Simulation" [level=3] [ref=e24]
+        - button "Generate Session Token" [ref=e25] [cursor=pointer]
+        - button "Clear Session" [ref=e26] [cursor=pointer]
+      - generic [ref=e27]:
+        - heading "Dynamic Table" [level=3] [ref=e28]
+        - button "Add Row" [active] [ref=e29] [cursor=pointer]
+        - table [ref=e30]:
+          - rowgroup [ref=e31]:
+            - row "Name Value Action" [ref=e32]:
+              - cell "Name" [ref=e33]
+              - cell "Value" [ref=e34]
+              - cell "Action" [ref=e35]
+          - rowgroup [ref=e36]:
+            - row "Sample 123 Delete" [ref=e37]:
+              - cell "Sample" [ref=e38]
+              - cell "123" [ref=e39]
+              - cell "Delete" [ref=e40]:
+                - button "Delete" [ref=e41] [cursor=pointer]
+      - generic [ref=e42]:
+        - heading "Modal Dialog" [level=3] [ref=e43]
+        - button "Open Modal" [ref=e44] [cursor=pointer]
+        - dialog [ref=e45]:
+          - generic [ref=e46]:
+            - generic [ref=e47] [cursor=pointer]: ×
+            - heading "Modal Title" [level=4] [ref=e48]
+            - paragraph [ref=e49]: This is a modal dialog. Test open/close and focus trap.
+      - generic [ref=e50]:
+        - heading "File Upload & Preview" [level=3] [ref=e51]
+        - button "Choose File" [ref=e52]
+      - generic [ref=e53]:
+        - heading "Tooltip Example" [level=3] [ref=e54]
+        - button "Hover me" [ref=e55] [cursor=pointer]
+      - generic [ref=e56]:
+        - heading "Dark/Light Mode Toggle" [level=3] [ref=e57]
+        - generic [ref=e58]:
+          - checkbox
+        - generic [ref=e60]: Light Mode
+      - generic [ref=e61]:
+        - heading "Delayed Loading Spinner" [level=3] [ref=e62]
+        - button "Load Data" [ref=e63] [cursor=pointer]
+      - generic [ref=e64]:
+        - heading "LocalStorage Key-Value Editor" [level=3] [ref=e65]
+        - textbox "Key" [ref=e66]
+        - textbox "Value" [ref=e67]
+        - button "Set" [ref=e68] [cursor=pointer]
+        - button "Get" [ref=e69] [cursor=pointer]
+        - button "Remove" [ref=e70] [cursor=pointer]
+      - generic [ref=e71]:
+        - heading "Toast Notification" [level=3] [ref=e72]
+        - button "Show Toast" [ref=e73] [cursor=pointer]
+      - generic [ref=e74]:
+        - heading "ARIA Live Region" [level=3] [ref=e75]
+        - button "Announce Message" [ref=e76] [cursor=pointer]
+```
