@@ -16,6 +16,14 @@ function checkLoginStatus() {
 	const token = localStorage.getItem("authToken");
 	const name = localStorage.getItem("userName");
 	const logoutBtn = document.getElementById("logout-btn");
+	console.log(
+		"[checkLoginStatus] token:",
+		token,
+		"name:",
+		name,
+		"logoutBtn:",
+		!!logoutBtn
+	);
 	if (token && name) {
 		showWelcome(name);
 		if (logoutBtn) logoutBtn.style.display = "inline-block";
