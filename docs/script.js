@@ -59,6 +59,10 @@ if (loginForm) {
 				// Show logout button
 				const logoutBtn = document.getElementById("logout-btn");
 				if (logoutBtn) logoutBtn.style.display = "inline-block";
+				// Redirect to home page after login
+				setTimeout(() => {
+					window.location.href = "home.html";
+				}, 700);
 			} else {
 				msg.style.color = "red";
 				msg.textContent = data.error || "Login failed.";
