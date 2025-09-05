@@ -20,7 +20,7 @@ if (openModal && modal && closeModal) {
 	window.addEventListener("click", (e) => {
 		if (e.target === modal) modal.style.display = "none";
 	});
-}
+// End of file
 
 // File upload & preview
 const fileUpload = document.getElementById("file-upload");
@@ -92,38 +92,56 @@ const lsRemove = document.getElementById("ls-remove");
 const lsResult = document.getElementById("ls-result");
 if (lsKey && lsValue && lsSet && lsGet && lsRemove && lsResult) {
 	lsSet.addEventListener("click", () => {
-		if (lsKey.value) {
-			localStorage.setItem(lsKey.value, lsValue.value);
-			lsResult.textContent = `Set ${lsKey.value}`;
+		if (loginForm) {
+			loginForm.addEventListener("submit", async (e) => {
+				e.preventDefault();
+				const email = document.getElementById("login-email").value;
+				const password = document.getElementById("login-password").value;
+				const msg = document.getElementById("login-message");
+				msg.textContent = "Logging in...";
+				try {
+					const res = await fetch(`${API_BASE}/login`, {
+						method: "POST",
+						headers: { "Content-Type": "application/json" },
+						body: JSON.stringify({ email, password })
+					});
+					const data = await res.json();
+					if (res.ok) {
+						msg.style.color = "green";
+						msg.textContent = data.message || "Login successful!";
+						if (data.token) {
+							localStorage.setItem("authToken", data.token);
+						}
+						document.getElementById("logout-btn").style.display = "inline-block";
+					} else {
+						msg.style.color = "red";
+						msg.textContent = data.error || "Login failed.";
+						localStorage.removeItem("authToken");
+						document.getElementById("logout-btn").style.display = "none";
+					}
+				} catch (err) {
+					msg.style.color = "red";
+					msg.textContent = "Network error.";
+					localStorage.removeItem("authToken");
+					document.getElementById("logout-btn").style.display = "none";
+				}
+			});
 		}
-	});
-	lsGet.addEventListener("click", () => {
-		if (lsKey.value) {
-			const val = localStorage.getItem(lsKey.value);
-			lsResult.textContent = val !== null ? `Value: ${val}` : "Not found";
-		}
-	});
-	lsRemove.addEventListener("click", () => {
-		if (lsKey.value) {
-			localStorage.removeItem(lsKey.value);
-			lsResult.textContent = `Removed ${lsKey.value}`;
-		}
-	});
-}
 
-// Toast notification
-const showToast = document.getElementById("show-toast");
-const toast = document.getElementById("toast");
-if (showToast && toast) {
-	showToast.addEventListener("click", () => {
-		toast.textContent = "This is a toast notification!";
-		toast.classList.add("show");
-		setTimeout(() => {
-			toast.classList.remove("show");
-			toast.textContent = "";
-		}, 2000);
-	});
-}
+		// Logout button logic
+		const logoutBtn = document.getElementById("logout-btn");
+		if (logoutBtn) {
+			logoutBtn.addEventListener("click", () => {
+				localStorage.removeItem("authToken");
+				document.getElementById("login-message").textContent = "Logged out.";
+				document.getElementById("login-message").style.color = "#007700";
+				logoutBtn.style.display = "none";
+			});
+			// Show logout if already logged in
+			if (localStorage.getItem("authToken")) {
+				logoutBtn.style.display = "inline-block";
+			}
+		}
 
 // ARIA live region
 const announceBtn = document.getElementById("announce-btn");
@@ -139,18 +157,33 @@ if (announceBtn && ariaLive) {
 
 // Login form
 const loginForm = document.getElementById("loginForm");
+// Backend API base URL (adjust if backend runs elsewhere)
+const API_BASE = "http://localhost:4000/api";
 if (loginForm) {
-	loginForm.addEventListener("submit", (e) => {
+	loginForm.addEventListener("submit", async (e) => {
 		e.preventDefault();
-		const email = loginForm.email.value;
-		const password = loginForm.password.value;
+		const email = document.getElementById("login-email").value;
+		const password = document.getElementById("login-password").value;
 		const msg = document.getElementById("login-message");
-		if (email === "test@example.com" && password === "Password123") {
-			msg.textContent = "Login successful!";
-			msg.style.color = "#007700";
-		} else {
-			msg.textContent = "Invalid credentials.";
-			msg.style.color = "#bb0000";
+		msg.textContent = "Logging in...";
+		try {
+			const res = await fetch(`${API_BASE}/login`, {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ email, password })
+			});
+			const data = await res.json();
+			if (res.ok) {
+				msg.style.color = "green";
+				msg.textContent = data.message || "Login successful!";
+				// Optionally redirect or store token here
+			} else {
+				msg.style.color = "red";
+				msg.textContent = data.error || "Login failed.";
+			}
+		} catch (err) {
+			msg.style.color = "red";
+			msg.textContent = "Network error.";
 		}
 	});
 }
@@ -158,18 +191,31 @@ if (loginForm) {
 // Register form
 const registerForm = document.getElementById("registerForm");
 if (registerForm) {
-	registerForm.addEventListener("submit", (e) => {
+	registerForm.addEventListener("submit", async (e) => {
 		e.preventDefault();
-		const name = registerForm.name.value;
-		const email = registerForm.email.value;
-		const password = registerForm.password.value;
+		const name = document.getElementById("register-name").value;
+		const email = document.getElementById("register-email").value;
+		const password = document.getElementById("register-password").value;
 		const msg = document.getElementById("register-message");
-		if (name && email && password.length >= 6) {
-			msg.textContent = "Registration successful!";
-			msg.style.color = "#007700";
-		} else {
-			msg.textContent = "Please fill all fields (password min 6 chars).";
-			msg.style.color = "#bb0000";
+		msg.textContent = "Registering...";
+		try {
+			const res = await fetch(`${API_BASE}/register`, {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ name, email, password })
+			});
+			const data = await res.json();
+			if (res.ok) {
+				msg.style.color = "green";
+				msg.textContent = data.message || "Registration successful!";
+				// Optionally redirect or clear form here
+			} else {
+				msg.style.color = "red";
+				msg.textContent = data.error || "Registration failed.";
+			}
+		} catch (err) {
+			msg.style.color = "red";
+			msg.textContent = "Network error.";
 		}
 	});
 }
