@@ -7,7 +7,7 @@ End-to-end test automation for the [Automation Projects Demo Site](https://padra
 ## 📁 Structure
 
 ```
-selenium-portfolio/
+selenium-projects/
 ├── PageObjects/
 │   └── HomePage.ts
 ├── tests/

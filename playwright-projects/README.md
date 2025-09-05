@@ -1,4 +1,4 @@
-# Playwright Portfolio
+# Playwright Projects
 
 End-to-end test automation for multiple web projects, including:
 
@@ -17,12 +17,12 @@ Built with Playwright, TypeScript, and the Page Object Model (POM).
 - Test data management via fixtures
 - TypeScript for type safety
 - Playwright test runner and reporting
-- API testing using Postman collections (see `../postman-portfolio`)
+- API testing using Postman collections (see `../postman-projects`)
 
 ## 📁 Project Structure
 
 ```
-playwright-portfolio/
+playwright-projects/
 ├── rahulshetty/
 │   ├── assets/
 │   ├── Components.ts/
@@ -49,7 +49,7 @@ playwright-portfolio/
 
 ## 🧪 API Testing with Postman
 
-- See `../postman-portfolio` for API test collections and documentation.
+- See `../postman-projects` for API test collections and documentation.
 
 ## 🏁 Getting Started
 

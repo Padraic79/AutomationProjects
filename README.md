@@ -8,15 +8,15 @@ Welcome to my Automation Projects repository! This repo is designed to showcase 
 
 Live demo site for Playwright UI automation, hosted on GitHub Pages:
 
-### 2. `playwright-portfolio/`
+### 2. `playwright-projects/`
 
 Multi-project Playwright automation suite, organized for scalability:
 
-### 3. `selenium-portfolio/`
+### 3. `selenium-projects/`
 
 Selenium automation suite for learning and comparison:
 
-### 4. `postman-portfolio/`
+### 4. `postman-projects/`
 
 Robust API tests using Postman collections:
 
@@ -48,9 +48,9 @@ A showcase of modern test automation, UI and API testing, and framework design u
 
 - `docs/` — Static site for UI demo and Playwright testing (published via GitHub Pages)
 - `backend/` — Node.js/Express/SQLite backend for authentication and API ([README](backend/README.md))
-- `playwright-portfolio/` — Playwright automation suites for multiple projects
-- `selenium-portfolio/` — Selenium automation and comparison guides
-- `postman-portfolio/` — API test collections and documentation
+- `playwright-projects/` — Playwright automation suites for multiple projects
+- `selenium-projects/` — Selenium automation and comparison guides
+- `postman-projects/` — API test collections and documentation
 
 ## 🚀 How to Run Locally
 
@@ -75,11 +75,11 @@ A showcase of modern test automation, UI and API testing, and framework design u
 - Playwright tests target the live GitHub Pages site by default.
 - To run tests:
   ```
-  cd playwright-portfolio
+  cd playwright-projects
   npm install
   npx playwright test
   ```
-- See `playwright-portfolio/playwright.config.ts` for the baseURL (set to the live site).
+- See `playwright-projects/playwright.config.ts` for the baseURL (set to the live site).
 
 ## Features
 

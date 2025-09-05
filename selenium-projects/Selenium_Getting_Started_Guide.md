@@ -6,14 +6,14 @@ This guide explains, step by step, how your Selenium automation project is set u
 
 ## 1. Project Overview
 
-Your `selenium-portfolio` folder demonstrates how to automate browser tests for your personal demo site ([Automation Projects Demo](https://padraic79.github.io/AutomationProjects/)) using Selenium WebDriver, TypeScript, and the Page Object Model. This is a common approach in real-world test automation.
+Your `selenium-projects` folder demonstrates how to automate browser tests for your personal demo site ([Automation Projects Demo](https://padraic79.github.io/AutomationProjects/)) using Selenium WebDriver, TypeScript, and the Page Object Model. This is a common approach in real-world test automation.
 
 ---
 
 ## 2. Folder Structure & File Purpose
 
 ```
-selenium-portfolio/
+selenium-projects/
 ├── PageObjects/
 │   └── HomePage.ts
 ├── tests/
@@ -66,7 +66,7 @@ selenium-portfolio/
 
 ## 4. Step-by-Step: What Was Done
 
-1. Created the `selenium-portfolio` folder and subfolders for PageObjects and tests.
+1. Created the `selenium-projects` folder and subfolders for PageObjects and tests.
 2. Added a TypeScript Page Object (`HomePage.ts`) for your demo site.
 3. Added a Jest-compatible Selenium test (`home.spec.ts`) that uses the Page Object.
 4. Added a Jest config file for TypeScript test support.
@@ -78,7 +78,7 @@ selenium-portfolio/
 
 ## 5. How to Run the Tests
 
-1. Open a terminal in the `selenium-portfolio` folder.
+1. Open a terminal in the `selenium-projects` folder.
 2. Run:
    ```sh
    npm install
