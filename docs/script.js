@@ -256,6 +256,7 @@ if (lsKey && lsValue && lsSet && lsGet && lsRemove && lsResult) {
 	}
 }
 
+const announceBtn = document.getElementById("announce-btn");
 const ariaLive = document.getElementById("aria-live");
 if (announceBtn && ariaLive) {
 	announceBtn.addEventListener("click", () => {
