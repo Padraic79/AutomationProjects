@@ -1,8 +1,8 @@
 // --- Welcome message logic ---
 const welcomeUser = document.getElementById("welcome-user"); // Add <span id="welcome-user"></span> in your header/nav
-function showWelcome(name) {
+function showWelcome(nameOrEmail) {
 	if (welcomeUser) {
-		welcomeUser.textContent = `Welcome, ${name}!`;
+		welcomeUser.textContent = `Welcome, ${nameOrEmail}!`;
 		welcomeUser.style.display = "inline";
 	}
 }
@@ -12,9 +12,23 @@ function hideWelcome() {
 		welcomeUser.style.display = "none";
 	}
 }
+function getUserNameOrEmailFromJWT(token) {
+	try {
+		const payload = JSON.parse(atob(token.split(".")[1]));
+		return payload.name || payload.email || "";
+	} catch (e) {
+		return "";
+	}
+}
+
 function checkLoginStatus() {
 	const token = localStorage.getItem("authToken");
-	const name = localStorage.getItem("userName");
+	let nameOrEmail = localStorage.getItem("userName");
+	if (token && !nameOrEmail) {
+		// Try to recover name/email from JWT if missing
+		nameOrEmail = getUserNameOrEmailFromJWT(token);
+		if (nameOrEmail) localStorage.setItem("userName", nameOrEmail);
+	}
 	const logoutBtn = document.getElementById("logout-btn");
 	console.log(
 		"[checkLoginStatus] token:",
@@ -24,12 +38,13 @@ function checkLoginStatus() {
 		"logoutBtn:",
 		!!logoutBtn
 	);
-	if (token && name) {
-		showWelcome(name);
-		if (logoutBtn) logoutBtn.style.display = "inline-block";
+	if (token && nameOrEmail) {
+		showWelcome(nameOrEmail);
+		if (logoutBtn)
+			logoutBtn.style.setProperty("display", "inline-block", "important");
 	} else {
 		hideWelcome();
-		if (logoutBtn) logoutBtn.style.display = "none";
+		if (logoutBtn) logoutBtn.style.setProperty("display", "none", "important");
 	}
 }
 document.addEventListener("DOMContentLoaded", checkLoginStatus);
@@ -61,9 +76,15 @@ if (loginForm) {
 				if (data.token) {
 					localStorage.setItem("authToken", data.token);
 				}
-				if (data.name) {
-					localStorage.setItem("userName", data.name);
-					showWelcome(data.name);
+				let nameOrEmail = data.name;
+				if ((!nameOrEmail || nameOrEmail === "null") && data.token) {
+					nameOrEmail = getUserNameOrEmailFromJWT(data.token);
+				}
+				if (nameOrEmail) {
+					localStorage.setItem("userName", nameOrEmail);
+					// Force sync flush before redirect
+					localStorage.getItem("userName");
+					showWelcome(nameOrEmail);
 				}
 				// Show logout button
 				const logoutBtn = document.getElementById("logout-btn");
@@ -142,7 +163,7 @@ if (logoutBtn) {
 	});
 	// Show logout if already logged in
 	if (localStorage.getItem("authToken")) {
-		logoutBtn.style.display = "inline-block";
+		logoutBtn.style.setProperty("display", "inline-block", "important");
 	}
 }
 
