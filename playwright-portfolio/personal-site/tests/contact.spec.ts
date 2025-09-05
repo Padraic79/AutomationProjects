@@ -11,6 +11,7 @@ test.describe("Contact Page", () => {
         await expect(contact.emailInput).toBeVisible();
         await expect(contact.messageInput).toBeVisible();
         await expect(contact.submitButton).toBeVisible();
+        await page.pause()
     });
 
     // Add more contact form tests as needed
