@@ -8,48 +8,23 @@ Welcome to my Automation Projects repository! This repo is designed to showcase 
 
 Live demo site for Playwright UI automation, hosted on GitHub Pages:
 
-- Interactive forms (login, registration, contact)
-- Advanced UI elements (dropdowns, tooltips, modals, file upload, dark/light mode, spinners)
-- LocalStorage and SessionStorage scenarios
-- **[🌐 View Live Demo](https://padraic79.github.io/AutomationProjects/)**
-
 ### 2. `playwright-portfolio/`
 
 Multi-project Playwright automation suite, organized for scalability:
-
-- **rahulshetty/**: End-to-end and API tests for the Automation Exercise site, using Page Object Model, data-driven tests, and Playwright best practices.
-- **personal-site/**: Playwright tests and PageObjects for a personal demo site hosted on GitHub Pages.
-- **Multi-project config**: Easily run tests for each project with Playwright's multi-project setup.
 
 ### 3. `selenium-portfolio/`
 
 Selenium automation suite for learning and comparison:
 
-- **personal-site/**: Selenium tests and PageObjects for the same demo site as Playwright, using TypeScript and Jest.
-- **Comparison guide**: Includes a detailed document comparing Playwright and Selenium, written for my own learning and to help others understand the differences in setup, drivers, test runners, and best practices.
-- **Purpose**: This folder is dedicated to exploring Selenium, practicing automation concepts, and directly comparing approaches with Playwright.
-
 ### 4. `postman-portfolio/`
 
 Robust API tests using Postman collections:
-
-- Chained API requests, dynamic variables, and automated assertions.
-- Example: Library API (add, get, delete book).
 
 ## About This Repository
 
 This repository is a work in progress and will be continuously updated with new projects, features, and improvements. My goal is to demonstrate:
 
-- Advanced UI and API automation
-- Scalable, maintainable framework design
-- Real-world test scenarios and best practices
-- Clean, well-documented code
-
 ## Why Explore This Repo?
-
-- **Real-World Scenarios:** Projects are based on real-world automation challenges and best practices.
-- **Framework Design:** Demonstrates scalable, modular, and maintainable automation architecture.
-- **Growth Mindset:** I am always learning and adding new tools, frameworks, and techniques.
 
 ## For Employers & Reviewers
 
@@ -57,14 +32,55 @@ If you are a potential employer or collaborator, I invite you to explore the cod
 
 **Key skills demonstrated:**
 
-- Playwright (TypeScript/JavaScript) UI & API automation
-- Page Object Model & data-driven testing
-- Postman API collections & scripting
-- Multi-project configuration & scalable repo design
-- Modern web automation scenarios (file upload, cookies, storage, accessibility)
+# Automation Projects Portfolio
+
+> A showcase of modern test automation, UI and API testing, and framework design using Playwright, Selenium, and Postman. Built for real-world scenarios, best practices, and continuous learning.
 
 ---
 
+## 📺 Live Demo Site
+
+- **[View the Playwright Demo Site (GitHub Pages)](https://padraic79.github.io/AutomationProjects/)**
+- Explore interactive forms, advanced UI features, and accessibility best practices.
+- All static content is served from the `/docs` folder.
+
+## 🗂️ Repository Structure
+
+- `docs/` — Static site for UI demo and Playwright testing (published via GitHub Pages)
+- `backend/` — Node.js/Express/SQLite backend for authentication and API (run locally)
+- `playwright-portfolio/` — Playwright automation suites for multiple projects
+- `selenium-portfolio/` — Selenium automation and comparison guides
+- `postman-portfolio/` — API test collections and documentation
+
+## 🚀 How to Run Locally
+
+**To view the live demo:**
+
+- Visit [https://padraic79.github.io/AutomationProjects/](https://padraic79.github.io/AutomationProjects/)
+
+**To enable login/register and API features:**
+
+1. Clone the repo and run the backend:
+   ```
+   git clone https://github.com/Padraic79/AutomationProjects.git
+   cd AutomationProjects/backend
+   npm install
+   npm start
+   ```
+2. Open the live demo site in your browser. The frontend will connect to your local backend for authentication.
+
+## 🧑‍💻 For Employers & Reviewers
+
+- Demonstrates:
+  - Modern UI and API automation (Playwright, Selenium, Postman)
+  - Scalable, maintainable framework design
+  - Real-world test scenarios and best practices
+  - Clean, well-documented code
+- Feedback and suggestions are welcome!
+
+---
+
+**Key skills demonstrated:** Playwright (TypeScript/JavaScript), Selenium, API automation, Node.js, CI/CD, and more.
 Thank you for visiting my Automation Projects repo!
 
 — Padraic Doyle

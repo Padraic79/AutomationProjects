@@ -1,8 +1,15 @@
-# Playwright-Portfolio
+# Playwright Portfolio
 
-A modern end-to-end test automation suite for multiple web projects, including the [Automation Exercise](https://automationexercise.com/) demo site and a [personal demo site](https://padraic79.github.io/AutomationProjects/) hosted on GitHub Pages. Built with Playwright and the Page Object Model (POM) in TypeScript.
+End-to-end test automation for multiple web projects, including:
 
-## Features
+- [Automation Exercise](https://automationexercise.com/)
+- [Personal Demo Site (GitHub Pages)](https://padraic79.github.io/AutomationProjects/)
+
+Built with Playwright, TypeScript, and the Page Object Model (POM).
+
+---
+
+## 🚀 Features
 
 - Automated UI tests for multiple sites/projects
 - Multi-project Playwright configuration for easy test targeting
@@ -10,9 +17,9 @@ A modern end-to-end test automation suite for multiple web projects, including t
 - Test data management via fixtures
 - TypeScript for type safety
 - Playwright test runner and reporting
-- API testing using Postman collections (see postman-portfolio)
+- API testing using Postman collections (see `../postman-portfolio`)
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 playwright-portfolio/
@@ -34,29 +41,41 @@ playwright-portfolio/
 ├── tsconfig.json
 ├── package.json
 ├── README.md
-
-postman-portfolio/
-├── BooksData.csv
-├── Library.postman_collection.json
-└── README.md
 ```
 
-- **personal-site** contains Playwright tests for your demo site hosted on GitHub Pages. Deployment is managed at the repository root, not via a docs/ folder.
-- The Playwright config uses a multi-project setup, allowing you to run tests for each site independently or all together.
-- The postman-portfolio folder contains API test collections and documentation for testing REST APIs using Postman.
+- **personal-site/**: Playwright tests for the [live demo site](https://padraic79.github.io/AutomationProjects/). The frontend is static, but login/register features require running the backend locally (see repo root README).
+- **rahulshetty/**: Tests for the Automation Exercise site, using best practices and POM.
+- Multi-project config: Run tests for each project independently or all together.
 
-## API Testing with Postman
+## 🧪 API Testing with Postman
 
-API tests are managed in the `postman-portfolio` folder. The included Postman collection demonstrates:
+- See `../postman-portfolio` for API test collections and documentation.
 
-- Adding, retrieving, and deleting books via the Library API
-- Chaining requests using dynamic variables
-- Assertions and scripts for robust, repeatable API testing
-- Full workflow execution using the Postman Collection Runner
+## 🏁 Getting Started
 
-See the [postman-portfolio/README.md](../postman-portfolio/README.md) for details and instructions.
+1. Install dependencies:
+   ```
+   npm install
+   ```
+2. Run all Playwright tests:
+   ```
+   npx playwright test
+   ```
+3. Run tests for a specific project:
+   ```
+   npx playwright test --project=personal-site
+   ```
 
-## Getting Started
+## 💡 For Employers & Reviewers
+
+- Demonstrates:
+  - Modern Playwright automation (multi-project, POM, fixtures)
+  - Integration with a live demo site (GitHub Pages)
+  - Clean, maintainable code and structure
+
+---
+
+Feedback and suggestions are welcome!
 
 ### Prerequisites
 

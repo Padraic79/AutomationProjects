@@ -1,8 +1,10 @@
 # Selenium Portfolio
 
-This folder showcases end-to-end test automation for the personal demo site ([Automation Projects Demo](https://padraic79.github.io/AutomationProjects/)) using Selenium WebDriver, TypeScript, and the Page Object Model.
+End-to-end test automation for the [Automation Projects Demo Site](https://padraic79.github.io/AutomationProjects/) using Selenium WebDriver, TypeScript, and the Page Object Model (POM).
 
-## Structure
+---
+
+## 📁 Structure
 
 ```
 selenium-portfolio/
@@ -14,14 +16,14 @@ selenium-portfolio/
 └── README.md
 ```
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
 - Node.js (v16+ recommended)
 - npm
 - Google Chrome browser
-- ChromeDriver (automatically managed by selenium-webdriver)
+- ChromeDriver (managed by selenium-webdriver)
 
 ### Install dependencies
 
@@ -35,11 +37,15 @@ npm install
 npx jest
 ```
 
-## About
+## 💡 About
 
 - The test checks that the home page loads and the title contains "Automation Projects".
 - The Page Object Model is used for maintainability and scalability.
 - Jest is used as the test runner for TypeScript tests.
+
+## 🌐 Part of the Automation Projects Portfolio
+
+- See the root [README.md](../README.md) for a full overview and comparison with Playwright automation.
 
 ## License
 
