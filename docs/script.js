@@ -1,3 +1,10 @@
+// Ensure modal closes on navigation (fix for features page nav)
+document.querySelectorAll("nav a").forEach((link) => {
+	link.addEventListener("click", () => {
+		const modal = document.getElementById("modal");
+		if (modal) modal.style.display = "none";
+	});
+});
 // Modal dialog
 const openModal = document.getElementById("open-modal");
 const modal = document.getElementById("modal");
@@ -129,22 +136,6 @@ if (announceBtn && ariaLive) {
 		}, 2000);
 	});
 }
-// Simple SPA navigation
-const navLinks = document.querySelectorAll("nav a");
-const sections = document.querySelectorAll("main > section");
-navLinks.forEach((link) => {
-	link.addEventListener("click", (e) => {
-		e.preventDefault();
-		const id = link.getAttribute("href").replace("#", "") || "home";
-		sections.forEach(
-			(sec) => (sec.style.display = sec.id === id ? "block" : "none")
-		);
-	});
-});
-// Show home by default
-sections.forEach(
-	(sec) => (sec.style.display = sec.id === "home" ? "block" : "none")
-);
 
 // Login form
 const loginForm = document.getElementById("loginForm");
