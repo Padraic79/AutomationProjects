@@ -95,6 +95,6 @@ app.get("/api/profile", authenticateToken, async (req, res) => {
 	});
 });
 
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, "0.0.0.0", () => {
 	console.log(`Backend server running on http://0.0.0.0:${PORT}`);
 });
