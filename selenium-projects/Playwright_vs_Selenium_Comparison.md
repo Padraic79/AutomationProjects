@@ -188,6 +188,8 @@ await page.waitForTimeout(1000);
 ### Selenium Page Object
 
 ```javascript
+const { Builder, By } = require("selenium-webdriver");
+
 class LoginPage {
 	constructor(driver) {
 		this.driver = driver;
@@ -213,6 +215,8 @@ class LoginPage {
 ### Playwright Page Object
 
 ```javascript
+import { expect } from "@playwright/test";
+
 class LoginPage {
 	constructor(page) {
 		this.page = page;
@@ -240,16 +244,29 @@ class LoginPage {
 **Selenium Test Data:**
 
 ```javascript
+const { Builder } = require("selenium-webdriver");
 const testData = {
 	validUser: { username: "test@example.com", password: "password123" },
 	invalidUser: { username: "invalid@example.com", password: "wrong" },
 };
 
-test("login with valid credentials", async () => {
-	const loginPage = new LoginPage(driver);
-	await loginPage.enterUsername(testData.validUser.username);
-	await loginPage.enterPassword(testData.validUser.password);
-	await loginPage.clickLogin();
+describe("Login Tests", () => {
+	let driver;
+
+	beforeEach(async () => {
+		driver = new Builder().forBrowser("chrome").build();
+	});
+
+	afterEach(async () => {
+		await driver.quit();
+	});
+
+	test("login with valid credentials", async () => {
+		const loginPage = new LoginPage(driver);
+		await loginPage.enterUsername(testData.validUser.username);
+		await loginPage.enterPassword(testData.validUser.password);
+		await loginPage.clickLogin();
+	});
 });
 ```
 
@@ -407,6 +424,18 @@ describe("E-commerce Login", () => {
 		await driver.wait(until.urlContains("/dashboard"), 10000);
 		expect(await driver.getCurrentUrl()).toContain("/dashboard");
 	});
+
+	test("should show error for invalid credentials", async () => {
+		await driver.get("https://example.com/login");
+
+		await loginPage.enterUsername("invalid@example.com");
+		await loginPage.enterPassword("wrongpassword");
+		await loginPage.clickLogin();
+
+		await driver.wait(until.elementLocated(By.className("error")), 5000);
+		const errorText = await driver.findElement(By.className("error")).getText();
+		expect(errorText).toContain("Invalid credentials");
+	});
 });
 ```
 
@@ -433,7 +462,96 @@ test.describe("E-commerce Login", () => {
 
 ---
 
-## 9. CI/CD Integration
+## 9. File Uploads
+
+### Handling File Uploads
+
+| Action             | Selenium                                                                                                                                        | Playwright                                                                                              |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| **Upload file**    | `javascript<br>const fileInput = await driver.findElement(By.css('input[type="file"]'));<br>await fileInput.sendKeys('/path/to/file.txt');<br>` | `javascript<br>await page.locator('input[type="file"]').setInputFiles('/path/to/file.txt');<br>`        |
+| **Multiple files** | `javascript<br>await fileInput.sendKeys('/path/file1.txt\n/path/file2.txt');<br>`                                                               | `javascript<br>await page.locator('input[type="file"]').setInputFiles(['file1.txt', 'file2.txt']);<br>` |
+
+---
+
+## 10. Keyboard & Mouse Interactions
+
+### Keyboard Actions
+
+| Action                | Selenium                                                                                            | Playwright                                                  |
+| --------------------- | --------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| **Press Enter**       | `javascript<br>await driver.actions().sendKeys(Key.ENTER).perform();<br>`                           | `javascript<br>await page.keyboard.press('Enter');<br>`     |
+| **Type special keys** | `javascript<br>await driver.actions().keyDown(Key.CONTROL).sendKeys('a').perform();<br>`            | `javascript<br>await page.keyboard.press('Control+a');<br>` |
+| **Clear field**       | `javascript<br>const field = await driver.findElement(By.id('input'));<br>await field.clear();<br>` | `javascript<br>await page.locator('#input').clear();<br>`   |
+
+### Mouse Actions
+
+| Action            | Selenium                                                                                                | Playwright                                                                         |
+| ----------------- | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| **Right click**   | `javascript<br>const actions = driver.actions();<br>await actions.contextClick(element).perform();<br>` | `javascript<br>await page.locator('#element').click({ button: 'right' });<br>`     |
+| **Double click**  | `javascript<br>await actions.doubleClick(element).perform();<br>`                                       | `javascript<br>await page.locator('#element').dblclick();<br>`                     |
+| **Hover**         | `javascript<br>await actions.moveToElement(element).perform();<br>`                                     | `javascript<br>await page.locator('#element').hover();<br>`                        |
+| **Drag and drop** | `javascript<br>await actions.dragAndDrop(source, target).perform();<br>`                                | `javascript<br>await page.locator('#source').dragTo(page.locator('#target'));<br>` |
+
+---
+
+## 11. Form Handling
+
+### Complete Form Examples
+
+**Selenium Form Handling:**
+
+```javascript
+const { Builder, By } = require("selenium-webdriver");
+
+test("complete contact form", async () => {
+	const driver = new Builder().forBrowser("chrome").build();
+
+	await driver.get("https://example.com/contact");
+
+	// Fill text inputs
+	await driver.findElement(By.id("name")).sendKeys("John Doe");
+	await driver.findElement(By.id("email")).sendKeys("john@example.com");
+
+	// Select dropdown
+	const select = new Select(driver.findElement(By.id("subject")));
+	await select.selectByVisibleText("Support");
+
+	// Check checkbox
+	await driver.findElement(By.id("newsletter")).click();
+
+	// Submit form
+	await driver.findElement(By.css("button[type='submit']")).click();
+
+	await driver.quit();
+});
+```
+
+**Playwright Form Handling:**
+
+```javascript
+import { test } from "@playwright/test";
+
+test("complete contact form", async ({ page }) => {
+	await page.goto("https://example.com/contact");
+
+	// Fill text inputs
+	await page.locator("#name").fill("John Doe");
+	await page.locator("#email").fill("john@example.com");
+
+	// Select dropdown
+	await page.locator("#subject").selectOption({ label: "Support" });
+
+	// Check checkbox
+	await page.locator("#newsletter").check();
+
+	// Submit form
+	await page.locator("button[type='submit']").click();
+});
+```
+
+---
+
+## 12. CI/CD Integration
 
 ### Selenium in CI/CD
 
@@ -465,7 +583,7 @@ test.describe("E-commerce Login", () => {
 
 ---
 
-## 10. Practical Tips for Learning
+## 13. Practical Tips for Learning
 
 - **Start simple:** Write basic tests that open a page and check the title.
 - **Iterate:** Add more actions (clicks, form fills, assertions) as you learn.
@@ -479,7 +597,7 @@ test.describe("E-commerce Login", () => {
 
 ---
 
-## 11. Common Beginner Mistakes & Solutions
+## 14. Common Beginner Mistakes & Solutions
 
 ### Mistake 1: Not waiting for elements
 
@@ -540,6 +658,8 @@ await page.locator("#button").click(); // Auto-waits for element
 
 ### Mistake 4: Not cleaning up resources
 
+**Note:** In Playwright, using the `{ page }` fixture automatically handles cleanup. The "wrong" example shows manually creating browser instances without proper cleanup.
+
 ```javascript
 // ❌ Wrong - Selenium
 test("my test", async () => {
@@ -549,9 +669,12 @@ test("my test", async () => {
 });
 
 // ❌ Wrong - Playwright
-test("my test", async ({ page }) => {
+test("my test", async () => {
+	const { chromium } = require("@playwright/test");
+	const browser = await chromium.launch();
+	const page = await browser.newPage();
 	// ... test code
-	// Browser context not closed properly
+	// Browser never closed - memory leak!
 });
 
 // ✅ Correct - Selenium
@@ -594,5 +717,3 @@ test("my test", async ({ page }) => {
 10. Learn from mistakes and study common patterns
 
 ---
-
-**Use this document to explain your projects' architecture and your understanding of both frameworks.**
