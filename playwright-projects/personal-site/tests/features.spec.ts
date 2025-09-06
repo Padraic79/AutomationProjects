@@ -33,11 +33,14 @@ test.describe("Features Page", () => {
 
     test("Dynamic Table - Add and Delete Row", async () => {
         const initialRows = await features.demoTable.locator("tbody tr").count();
-        // Register both dialog handlers BEFORE clicking the button
-        const nameDialogPromise = features.page.waitForEvent('dialog').then(dialog => dialog.accept('TestName'));
-        const valueDialogPromise = features.page.waitForEvent('dialog').then(dialog => dialog.accept('TestValue'));
+        // Chain dialog handlers so each handles its own prompt
+        features.page.once('dialog', async dialog1 => {
+            await dialog1.accept('TestName');
+            features.page.once('dialog', async dialog2 => {
+                await dialog2.accept('TestValue');
+            });
+        });
         await features.addRowBtn.click();
-        await Promise.all([nameDialogPromise, valueDialogPromise]);
         // Wait for row to be added
         await expect(features.demoTable.locator("tbody tr")).toHaveCount(initialRows + 1);
         // Delete the new row
