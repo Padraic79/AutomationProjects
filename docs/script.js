@@ -362,15 +362,62 @@ if (sessionBtn && sessionToken && clearSession) {
 // Dynamic table feature
 const addRowBtn = document.getElementById("add-row");
 const demoTable = document.getElementById("demo-table");
-if (addRowBtn && demoTable) {
+const addRowModal = document.getElementById("add-row-modal");
+const closeAddModal = document.getElementById("close-add-modal");
+const submitRow = document.getElementById("submit-row");
+const cancelRow = document.getElementById("cancel-row");
+const rowName = document.getElementById("row-name");
+const rowValue = document.getElementById("row-value");
+
+if (addRowBtn && demoTable && addRowModal) {
 	addRowBtn.addEventListener("click", () => {
-		const name = prompt("Enter name:");
-		const value = prompt("Enter value:");
+		addRowModal.style.display = "block";
+		addRowModal.setAttribute("aria-hidden", "false");
+		rowName.focus();
+	});
+
+	closeAddModal.addEventListener("click", () => {
+		addRowModal.style.display = "none";
+		addRowModal.setAttribute("aria-hidden", "true");
+	});
+
+	cancelRow.addEventListener("click", () => {
+		addRowModal.style.display = "none";
+		addRowModal.setAttribute("aria-hidden", "true");
+	});
+
+	submitRow.addEventListener("click", () => {
+		const name = rowName.value.trim();
+		const value = rowValue.value.trim();
 		if (name && value) {
 			const row = demoTable.insertRow(-1);
-			row.innerHTML = `<td>${name}</td><td>${value}</td><td><button class="delete-row">Delete</button></td>`;
+			// Sanitize inputs to prevent XSS
+			const safeName = document.createTextNode(name);
+			const safeValue = document.createTextNode(value);
+			const nameCell = row.insertCell(0);
+			const valueCell = row.insertCell(1);
+			const actionCell = row.insertCell(2);
+			nameCell.appendChild(safeName);
+			valueCell.appendChild(safeValue);
+			const deleteBtn = document.createElement("button");
+			deleteBtn.className = "delete-row";
+			deleteBtn.textContent = "Delete";
+			deleteBtn.setAttribute("aria-label", `Delete row for ${name}`);
+			actionCell.appendChild(deleteBtn);
+			rowName.value = "";
+			rowValue.value = "";
+			addRowModal.style.display = "none";
+			addRowModal.setAttribute("aria-hidden", "true");
 		}
 	});
+
+	window.addEventListener("click", (e) => {
+		if (e.target === addRowModal) {
+			addRowModal.style.display = "none";
+			addRowModal.setAttribute("aria-hidden", "true");
+		}
+	});
+
 	demoTable.addEventListener("click", (e) => {
 		if (e.target.classList.contains("delete-row")) {
 			e.target.closest("tr").remove();
@@ -379,7 +426,6 @@ if (addRowBtn && demoTable) {
 }
 
 // Toast notification feature
-const showToast = document.getElementById("show-toast");
 const toast = document.getElementById("toast");
 if (showToast && toast) {
 	showToast.addEventListener("click", () => {

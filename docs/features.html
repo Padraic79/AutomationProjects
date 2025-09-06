@@ -74,10 +74,40 @@
 							<tr>
 								<td>Sample</td>
 								<td>123</td>
-								<td><button class="delete-row">Delete</button></td>
+								<td>
+									<button class="delete-row" aria-label="Delete row for Sample">
+										Delete
+									</button>
+								</td>
 							</tr>
 						</tbody>
 					</table>
+				</div>
+				<div
+					id="add-row-modal"
+					class="modal"
+					role="dialog"
+					aria-labelledby="modal-title"
+					aria-hidden="true"
+				>
+					<div class="modal-content">
+						<span id="close-add-modal" class="close" aria-label="Close modal"
+							>&times;</span
+						>
+						<h4 id="modal-title">Add New Row</h4>
+						<label for="row-name">Name:</label>
+						<input type="text" id="row-name" aria-describedby="name-help" />
+						<span id="name-help" class="sr-only"
+							>Enter the name for the new row</span
+						>
+						<label for="row-value">Value:</label>
+						<input type="text" id="row-value" aria-describedby="value-help" />
+						<span id="value-help" class="sr-only"
+							>Enter the value for the new row</span
+						>
+						<button id="submit-row">Add Row</button>
+						<button id="cancel-row">Cancel</button>
+					</div>
 				</div>
 				<div class="feature-block">
 					<h3>Modal Dialog</h3>

@@ -2,7 +2,7 @@ import { Builder } from 'selenium-webdriver';
 import { Options } from 'selenium-webdriver/chrome';
 import { HomePage } from '../PageObjects/HomePage';
 
-jest.setTimeout(30000); // Increase timeout to 30 seconds
+// jest.setTimeout(30000); // Increase timeout to 30 seconds - removed as Jest not used
 
 let driver: any;
 let home: HomePage;
