@@ -1,4 +1,4 @@
-# Playwright Demo Site — Portfolio Project
+# Playwright Demo Site — Projects
 
 > This folder contains the static frontend for the Playwright automation demo site, published via GitHub Pages. It is designed for both manual exploration and automated UI testing, and demonstrates best practices for QA, accessibility, and full-stack integration.
 

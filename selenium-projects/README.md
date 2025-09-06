@@ -1,6 +1,6 @@
-# Selenium Portfolio
+# Selenium Projects
 
-End-to-end test automation for the [Automation Projects Demo Site](https://padraic79.github.io/AutomationProjects/) using Selenium WebDriver, TypeScript, and the Page Object Model (POM).
+I've created this Selenium projects to demonstrate my foundational skills in test automation using Selenium WebDriver with TypeScript and the Page Object Model. While I prefer modern tools like Playwright for new projects, Selenium has taught me a lot about browser automation basics, and I'm proud of how I've applied best practices here.
 
 ---
 
@@ -42,8 +42,9 @@ npx jest
 - The test checks that the home page loads and the title contains "Automation Projects".
 - The Page Object Model is used for maintainability and scalability.
 - Jest is used as the test runner for TypeScript tests.
+- I'm excited to show how Selenium can still be effective for simpler automation tasks.
 
-## 🌐 Part of the Automation Projects Portfolio
+## 🌐 Part of the Automation Projects
 
 - See the root [README.md](../README.md) for a full overview and comparison with Playwright automation.
 

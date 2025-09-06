@@ -1,6 +1,6 @@
-# Postman Portfolio: Library API Collection
+# Postman Projects: Library API Collection
 
-This folder contains the Postman collection for testing the Library API, including adding, retrieving, and deleting books.
+I've put together this Postman collection to showcase my API testing skills for the Library API, including adding, retrieving, and deleting books. I love how Postman makes it easy to chain requests and validate responses, and this project demonstrates my approach to robust API automation.
 
 ---
 
@@ -37,10 +37,11 @@ This folder contains the Postman collection for testing the Library API, includi
 
 - The collection uses Postman dynamic variables and scripts for robust, repeatable testing.
 - You can run the full workflow using the Postman Collection Runner.
+- I'm particularly proud of how I've implemented the chaining and validations here.
 
-## 🌐 Part of the Automation Projects Portfolio
+## 🌐 Part of the Automation Projects
 
-- See the root [README.md](../README.md) for a full overview of this portfolio and how API testing fits into the overall automation strategy.
+- See the root [README.md](../README.md) for a full overview of these projects and how API testing fits into the overall automation strategy.
 
 ## License
 

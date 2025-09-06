@@ -1,4 +1,4 @@
-# Selenium Portfolio: Getting Started Guide
+# Selenium Projects: Getting Started Guide
 
 This guide explains, step by step, how your Selenium automation project is set up, what each file does, and how it fits into a professional automation workflow. It is designed for beginners and is suitable for sharing with employers.
 
@@ -58,8 +58,8 @@ selenium-projects/
 ## 3. How It Fits Into the Bigger Picture
 
 - **Professional Automation:** Shows you can automate browser tests using industry-standard tools and patterns.
-- **Portfolio Value:** Demonstrates your ability to use Selenium, organize code with POM, and run tests with Jest.
-- **Integration:** Complements your Playwright portfolio, showing versatility with multiple frameworks.
+- **Projects Value:** Demonstrates your ability to use Selenium, organize code with POM, and run tests with Jest.
+- **Integration:** Complements your Playwright projects, showing versatility with multiple frameworks.
 - **CI/CD Ready:** The structure is suitable for integration into CI/CD pipelines for automated testing.
 
 ---

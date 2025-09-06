@@ -1,42 +1,6 @@
 # Automation Projects
 
-Welcome to my Automation Projects repository! This repo is designed to showcase my skills in modern test automation, API testing, and framework design using industry-standard tools like Playwright and Postman. It is structured for clarity, scalability, and real-world relevance.
-
-## Projects & Structure
-
-### 1. `docs/` (Live Demo Site)
-
-Live demo site for Playwright UI automation, hosted on GitHub Pages:
-
-### 2. `playwright-projects/`
-
-Multi-project Playwright automation suite, organized for scalability:
-
-### 3. `selenium-projects/`
-
-Selenium automation suite for learning and comparison:
-
-### 4. `postman-projects/`
-
-Robust API tests using Postman collections:
-
-## About This Repository
-
-This repository is a work in progress and will be continuously updated with new projects, features, and improvements. My goal is to demonstrate:
-
-## Why Explore This Repo?
-
-## For Reviewers
-
-If you are interested in test automation, quality assurance, or software development, this repository offers a wealth of information and examples. Feedback and suggestions are always welcome!
-
-**Key skills demonstrated:**
-
-# Automation Projects Portfolio
-
-A showcase of modern test automation, UI and API testing, and framework design using Playwright, Selenium, and Postman. Built for real-world scenarios, best practices, and continuous learning.
-
----
+Welcome to my Automation Projects repository! I've built this repo to showcase my skills in modern test automation, API testing, and framework design using industry-standard tools like Playwright, Selenium, and Postman. It's structured for clarity, scalability, and real-world relevance, and I'm continuously updating it with new projects and improvements.
 
 ## 📺 Live Demo Site
 
@@ -88,11 +52,16 @@ A showcase of modern test automation, UI and API testing, and framework design u
 - Real-world test scenarios and best practices
 - Clean, well-documented code
 
----
+## Why Explore This Repo?
 
----
+I'm passionate about test automation and quality assurance. This repository demonstrates my ability to build robust frameworks, handle complex scenarios, and integrate tools for efficient testing. Whether you're a fellow QA engineer, a developer, or a hiring manager, I hope you find value in these examples.
+
+## For Reviewers
+
+If you're interested in test automation or software development, feedback and suggestions are always welcome! Feel free to reach out or open an issue.
 
 **Key skills demonstrated:** Playwright (TypeScript/JavaScript), Selenium, API automation, Node.js, CI/CD, and more.
+
 Thank you for visiting my Automation Projects repo!
 
 — Padraic Doyle
