@@ -1,6 +1,30 @@
 # Playwright vs Selenium: Test Automation Comparison
 
-This document is my personal guide t**Use this document to explain your projects' architecture and your understanding of both frameworks.\***Use this document to explain your projects' architecture and your understanding of both frameworks.\*\* understanding the key differences between Playwright and Selenium test setups—including drivers, variables, test runners, and overall architecture. I created it for my own learning and projects. It includes detailed examples, explanations, and extra notes to help me build my skills and remember important concepts as I work through real-world automation projects.
+This document is my personal - **Show you*- **Show your work**Use this document to explain your projects' architecture and your understanding of both frameworks.**** Document your learning and share your repo with others.
+
+---
+
+**Key Concepts Explained:**
+...existing code...
+
+---
+
+**Use this document to explain your projects' architecture and your understanding of both frameworks.***Use this document to explain your projects' architecture and your understanding of both frameworks.**pts Explained:**
+...existing code...
+
+---
+
+**Use this document to explain your projects' architecture and your understanding of both frameworks.**:** Document your learning and share your repo with others.
+
+---
+
+**Key Concepts Explained:**
+...existing code...
+
+---
+
+**Use this document to explain your projects' architecture and your understanding of both frameworks.**
+**Use this document to explain your projects' architecture and your understanding of both frameworks.***Use this document to explain your projects' architecture and your understanding of both frameworks.***Use this document to explain your projects' architecture and your understanding of both frameworks.\***Use this document to explain your projects' architecture and your understanding of both frameworks.\*\* understanding the key differences between Playwright and Selenium test setups—including drivers, variables, test runners, and overall architecture. I created it for my own learning and projects. It includes detailed examples, explanations, and extra notes to help me build my skills and remember important concepts as I work through real-world automation projects.
 
 ---
 
