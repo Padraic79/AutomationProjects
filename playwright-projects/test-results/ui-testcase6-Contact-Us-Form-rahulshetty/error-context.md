@@ -1,0 +1,122 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e5]:
+      - link "Website for automation practice" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - img "Website for automation practice" [ref=e9] [cursor=pointer]
+      - list [ref=e12]:
+        - listitem [ref=e13]:
+          - link " Home" [ref=e14] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e15] [cursor=pointer]: 
+            - text: Home
+        - listitem [ref=e16]:
+          - link " Products" [ref=e17] [cursor=pointer]:
+            - /url: /products
+            - generic [ref=e18] [cursor=pointer]: 
+            - text: Products
+        - listitem [ref=e19]:
+          - link " Cart" [ref=e20] [cursor=pointer]:
+            - /url: /view_cart
+            - generic [ref=e21] [cursor=pointer]: 
+            - text: Cart
+        - listitem [ref=e22]:
+          - link " Signup / Login" [ref=e23] [cursor=pointer]:
+            - /url: /login
+            - generic [ref=e24] [cursor=pointer]: 
+            - text: Signup / Login
+        - listitem [ref=e25]:
+          - link " Test Cases" [ref=e26] [cursor=pointer]:
+            - /url: /test_cases
+            - generic [ref=e27] [cursor=pointer]: 
+            - text: Test Cases
+        - listitem [ref=e28]:
+          - link " API Testing" [ref=e29] [cursor=pointer]:
+            - /url: /api_list
+            - generic [ref=e30] [cursor=pointer]: 
+            - text: API Testing
+        - listitem [ref=e31]:
+          - link " Video Tutorials" [ref=e32] [cursor=pointer]:
+            - /url: https://www.youtube.com/c/AutomationExercise
+            - generic [ref=e33] [cursor=pointer]: 
+            - text: Video Tutorials
+        - listitem [ref=e34]:
+          - link " Contact us" [ref=e35] [cursor=pointer]:
+            - /url: /contact_us
+            - generic [ref=e36] [cursor=pointer]: 
+            - text: Contact us
+  - generic [ref=e37]:
+    - heading "Contact Us" [level=2] [ref=e41]:
+      - text: Contact
+      - strong [ref=e42]: Us
+    - generic [ref=e43]:
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - generic [ref=e47]: "Note:"
+          - text: Below contact form is for testing purpose.
+        - heading "Get In Touch" [level=2] [ref=e48]
+        - generic [ref=e50]:
+          - textbox "Name" [ref=e52]
+          - textbox "Email" [ref=e54]
+          - textbox "Subject" [ref=e56]
+          - textbox "Your Message Here" [ref=e58]
+          - button "Choose File" [ref=e60]
+          - button "Submit" [ref=e62] [cursor=pointer]
+      - generic [ref=e64]:
+        - heading "Feedback For Us" [level=2] [ref=e65]
+        - generic [ref=e66]:
+          - paragraph [ref=e67]: We really appreciate your response to our website.
+          - paragraph [ref=e68]:
+            - text: Kindly share your feedback with us at
+            - link "feedback@automationexercise.com" [ref=e69] [cursor=pointer]:
+              - /url: mailto:feedback@automationexercise.com
+              - generic [ref=e70] [cursor=pointer]: feedback@automationexercise.com
+            - text: .
+          - paragraph [ref=e71]: If you have any suggestion areas or improvements, do let us know. We will definitely work on it.
+          - paragraph [ref=e72]: Thank you
+  - generic:
+    - insertion:
+      - generic:
+        - iframe
+  - contentinfo [ref=e73]:
+    - generic [ref=e78]:
+      - heading "Subscription" [level=2] [ref=e79]
+      - generic [ref=e80]:
+        - textbox "Your email address" [ref=e81]
+        - button "" [ref=e82] [cursor=pointer]:
+          - generic [ref=e83] [cursor=pointer]: 
+        - paragraph [ref=e84]:
+          - text: Get the most recent updates from
+          - text: our site and be updated your self...
+    - generic [ref=e85]:
+      - paragraph [ref=e88]: Copyright © 2021 All rights reserved
+      - generic [ref=e90]:
+        - button "Privacy and cookie settings" [ref=e91] [cursor=pointer]
+        - generic [ref=e92]: "Managed by Google. Complies with IAB TCF. CMP ID: 300"
+  - text: 
+  - insertion [ref=e93]:
+    - iframe [ref=e96]:
+      - generic [active] [ref=f1e1]:
+        - generic [ref=f1e6]:
+          - generic [ref=f1e7]:
+            - link "100% Exam Pass rate every time - Textbook and 200+ Questions" [ref=f1e10] [cursor=pointer]:
+              - /url: https://googleads.g.doubleclick.net/aclk?nis=4&sa=l&ai=Cv7lP4xe8aNmDKtGIwuIPy_jnsQzAksnCgAHmgcnX-w6r59fzxgEQASD9tJ6VAWD12uqD_A6gAe6Mv_4DyAEBqQJkUlcNeqizPqgDAcgDwwSqBP8BT9DpzjM5X9BQfEiIyfF80D734di2PBiupGS-dtZ4jIys6MKW_BegQOWNvQMI-6x-uSkgyfiIa8NHGGUJ_k10JczRXxmVEsKxWO3a6G4DKgMCdGpWGfG3AYJu9fBLj-2qs_Pfp-kaDeAKBG0o-xsUnil8yG1gFZwBS6L8f7d6_UImRvkv8i75-WJp1FB1Xz4GTzhGBKh5gKI0AG-kUnDIDc9e7c1ek9smdJFvNulp899ZvRvIw9-XFU-dTUpX5SaryZsA6fQG-5Z2cZhjC18empnP7oa9XYUQdY4wmUKy5uXjBMfxHR9ym0JESWCtL8Od-P71WleF10kNi_z3G0kNwATJhYyh4wOIBd7vsbE5oAZmgAf68sABqAfi2LECqAemvhuoB8zOsQKoB_PRG6gHltgbqAeqm7ECqAeOzhuoB5PYG6gH8OAbqAfulrECqAf-nrECqAevvrECqAfVyRuoB9m2sQKoB5oGqAf_nrECqAffn7ECqAfKqbECqAfrpbECqAfqsbECqAeZtbECqAe-t7ECqAf4wrECqAf7wrEC2AcB0ggsCIDhgBAQARifATICqgI6DoDAA4CAhICAlK7gA6gHSL39wTpYr86XnIHEjwOxCaqHzy_lgfv6gAoBmAsByAsBogwLKgYKBIDXsQKQAQHaDBEKCxCw2JrJ0Y39xN8BEgIBA6oNAklFyA0B6g0TCIGyqZyBxI8DFVGEUAYdS_w5xvANAogOCdgTDYgUDNAVAZgWAcoWAgoA-BYBgBcBshcCGAG6FwI4AbIYCRIChlQYZiIBANAYAcIZAggB&ae=1&ase=2&gclid=EAIaIQobChMImYGYnIHEjwMVUYRQBh1L_DnGEAEYASAAEgLH7PD_BwE&num=1&cid=CAQSPgDZpuyzXJ_AKmhuUPADx7LblMI_8eQ-IDbaiEyEzlBtZ5G7SMBaq38b_ZtTisB3jzF9IUJlT1D0yCVwXc80GAE&sig=AOD64_2OoOfoeJvt7AVliCZkWEcSr7lQYg&client=ca-pub-1677597403311019&rf=1&nb=0&adurl=https://www.cmi-ireland.com/part-time-courses/pmp-project-management-certification%3Fgad_source%3D5%26gad_campaignid%3D15404398558%26gclid%3DEAIaIQobChMImYGYnIHEjwMVUYRQBh1L_DnGEAEYASAAEgLH7PD_BwE
+              - text: 100% Exam Pass rate every time - Textbook and
+              - text: 200+ Questions
+            - link "Top PMP Teachers with Great learning platform and 200 plus Exam preparation questions CMI Ireland" [ref=f1e12] [cursor=pointer]:
+              - /url: https://googleads.g.doubleclick.net/aclk?nis=4&sa=l&ai=Cv7lP4xe8aNmDKtGIwuIPy_jnsQzAksnCgAHmgcnX-w6r59fzxgEQASD9tJ6VAWD12uqD_A6gAe6Mv_4DyAEBqQJkUlcNeqizPqgDAcgDwwSqBP8BT9DpzjM5X9BQfEiIyfF80D734di2PBiupGS-dtZ4jIys6MKW_BegQOWNvQMI-6x-uSkgyfiIa8NHGGUJ_k10JczRXxmVEsKxWO3a6G4DKgMCdGpWGfG3AYJu9fBLj-2qs_Pfp-kaDeAKBG0o-xsUnil8yG1gFZwBS6L8f7d6_UImRvkv8i75-WJp1FB1Xz4GTzhGBKh5gKI0AG-kUnDIDc9e7c1ek9smdJFvNulp899ZvRvIw9-XFU-dTUpX5SaryZsA6fQG-5Z2cZhjC18empnP7oa9XYUQdY4wmUKy5uXjBMfxHR9ym0JESWCtL8Od-P71WleF10kNi_z3G0kNwATJhYyh4wOIBd7vsbE5oAZmgAf68sABqAfi2LECqAemvhuoB8zOsQKoB_PRG6gHltgbqAeqm7ECqAeOzhuoB5PYG6gH8OAbqAfulrECqAf-nrECqAevvrECqAfVyRuoB9m2sQKoB5oGqAf_nrECqAffn7ECqAfKqbECqAfrpbECqAfqsbECqAeZtbECqAe-t7ECqAf4wrECqAf7wrEC2AcB0ggsCIDhgBAQARifATICqgI6DoDAA4CAhICAlK7gA6gHSL39wTpYr86XnIHEjwOxCaqHzy_lgfv6gAoBmAsByAsBogwLKgYKBIDXsQKQAQHaDBEKCxCw2JrJ0Y39xN8BEgIBA6oNAklFyA0B6g0TCIGyqZyBxI8DFVGEUAYdS_w5xvANAogOCdgTDYgUDNAVAZgWAcoWAgoA-BYBgBcBshcCGAG6FwI4AbIYCRIChlQYZiIBANAYAcIZAggB&ae=1&ase=2&gclid=EAIaIQobChMImYGYnIHEjwMVUYRQBh1L_DnGEAEYASAAEgLH7PD_BwE&num=1&cid=CAQSPgDZpuyzXJ_AKmhuUPADx7LblMI_8eQ-IDbaiEyEzlBtZ5G7SMBaq38b_ZtTisB3jzF9IUJlT1D0yCVwXc80GAE&sig=AOD64_2OoOfoeJvt7AVliCZkWEcSr7lQYg&client=ca-pub-1677597403311019&rf=1&nb=7&adurl=https://www.cmi-ireland.com/part-time-courses/pmp-project-management-certification%3Fgad_source%3D5%26gad_campaignid%3D15404398558%26gclid%3DEAIaIQobChMImYGYnIHEjwMVUYRQBh1L_DnGEAEYASAAEgLH7PD_BwE
+              - text: Top PMP Teachers with Great learning platform and 200 plus Exam preparation questions CMI
+              - text: Ireland
+          - link "OPEN" [ref=f1e15] [cursor=pointer]:
+            - /url: https://googleads.g.doubleclick.net/aclk?nis=4&sa=l&ai=Cv7lP4xe8aNmDKtGIwuIPy_jnsQzAksnCgAHmgcnX-w6r59fzxgEQASD9tJ6VAWD12uqD_A6gAe6Mv_4DyAEBqQJkUlcNeqizPqgDAcgDwwSqBP8BT9DpzjM5X9BQfEiIyfF80D734di2PBiupGS-dtZ4jIys6MKW_BegQOWNvQMI-6x-uSkgyfiIa8NHGGUJ_k10JczRXxmVEsKxWO3a6G4DKgMCdGpWGfG3AYJu9fBLj-2qs_Pfp-kaDeAKBG0o-xsUnil8yG1gFZwBS6L8f7d6_UImRvkv8i75-WJp1FB1Xz4GTzhGBKh5gKI0AG-kUnDIDc9e7c1ek9smdJFvNulp899ZvRvIw9-XFU-dTUpX5SaryZsA6fQG-5Z2cZhjC18empnP7oa9XYUQdY4wmUKy5uXjBMfxHR9ym0JESWCtL8Od-P71WleF10kNi_z3G0kNwATJhYyh4wOIBd7vsbE5oAZmgAf68sABqAfi2LECqAemvhuoB8zOsQKoB_PRG6gHltgbqAeqm7ECqAeOzhuoB5PYG6gH8OAbqAfulrECqAf-nrECqAevvrECqAfVyRuoB9m2sQKoB5oGqAf_nrECqAffn7ECqAfKqbECqAfrpbECqAfqsbECqAeZtbECqAe-t7ECqAf4wrECqAf7wrEC2AcB0ggsCIDhgBAQARifATICqgI6DoDAA4CAhICAlK7gA6gHSL39wTpYr86XnIHEjwOxCaqHzy_lgfv6gAoBmAsByAsBogwLKgYKBIDXsQKQAQHaDBEKCxCw2JrJ0Y39xN8BEgIBA6oNAklFyA0B6g0TCIGyqZyBxI8DFVGEUAYdS_w5xvANAogOCdgTDYgUDNAVAZgWAcoWAgoA-BYBgBcBshcCGAG6FwI4AbIYCRIChlQYZiIBANAYAcIZAggB&ae=1&ase=2&gclid=EAIaIQobChMImYGYnIHEjwMVUYRQBh1L_DnGEAEYASAAEgLH7PD_BwE&num=1&cid=CAQSPgDZpuyzXJ_AKmhuUPADx7LblMI_8eQ-IDbaiEyEzlBtZ5G7SMBaq38b_ZtTisB3jzF9IUJlT1D0yCVwXc80GAE&sig=AOD64_2OoOfoeJvt7AVliCZkWEcSr7lQYg&client=ca-pub-1677597403311019&rf=1&nb=8&adurl=https://www.cmi-ireland.com/part-time-courses/pmp-project-management-certification%3Fgad_source%3D5%26gad_campaignid%3D15404398558%26gclid%3DEAIaIQobChMImYGYnIHEjwMVUYRQBh1L_DnGEAEYASAAEgLH7PD_BwE
+            - generic [ref=f1e19] [cursor=pointer]:
+              - generic [ref=f1e21] [cursor=pointer]: OPEN
+              - img [ref=f1e22] [cursor=pointer]
+        - img [ref=f1e27] [cursor=pointer]
+        - button [ref=f1e30] [cursor=pointer]:
+          - img [ref=f1e31] [cursor=pointer]
+        - iframe
+```
